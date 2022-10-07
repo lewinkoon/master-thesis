@@ -1,22 +1,30 @@
 \documentclass[12pt, a4paper]{book}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
 
 \input{preamble.tex}
 
+\begin{document}
+
+\frontmatter
 \title{Trabajo de Fin de Máster}
 \author{Luis Llamas}
 \date{\today}
-
-\begin{document}
-
-% \pagestyle{fancy}
-% \fancyfoot{}
-
-\frontmatter
 \maketitle
-This is frontmatter which uses Roman numerals
+
+\tableofcontents
+
+\chapter{Prefacio}
 
 \mainmatter
 \chapter{Introducción}
-\lipsum[1-5]
+
+\lipsum[1-20]
+
+\appendix
+\chapter{Anexos}
+
+\backmatter
+\chapter{Anotaciones}
 
 \end{document}

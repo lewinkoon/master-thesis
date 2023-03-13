@@ -4,7 +4,7 @@
 \usepackage[spanish, es-tabla]{babel}
 \usepackage[margin=25mm, headheight=72pt]{geometry}
 \usepackage{hyperref}
-\usepackage[backend=biber, style=authoryear]{biblatex}
+\usepackage[backend=biber]{biblatex}
 \addbibresource{references.bib}
 
 \usepackage{multirow}
@@ -17,5 +17,14 @@
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage{subcaption}
+\usepackage{lipsum}
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 
 \crefname{table}{Tabla}{Tablas}

@@ -1,7 +1,7 @@
 
 \usepackage[math]{iwona}
 \usepackage[T1]{fontenc}
-\usepackage[spanish, es-tabla]{babel}
+\usepackage[main=spanish, english]{babel}
 \usepackage[margin=25mm, headheight=72pt]{geometry}
 \usepackage{hyperref}
 \usepackage[backend=biber]{biblatex}
@@ -19,12 +19,6 @@
 \usepackage{subcaption}
 \usepackage{lipsum}
 
-\usepackage{afterpage}
-
-\newcommand\blankpage{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage}
-
 \crefname{table}{Tabla}{Tablas}
+
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}

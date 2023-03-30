@@ -304,3 +304,60 @@ Para aproximar la "repetibilidad formal" a una "repetibilidad idéntica" (así c
 Aunque pueda parecer extraño aplicar un método de trabajo basado en el tiempo en el mundo de la oficina, el aumento de la competencia global obliga a la dirección a aplicar métodos de aumento de la productividad probados en la industria también para las transacciones del entorno de oficina, independientemente de si se trata de front office o back office.
 Sin embargo, la aplicabilidad de normas estrictas de tiempo debido a la variabilidad del contenido de los pedidos es difícil, como acabamos de ver.
 Por tanto, es importante especificar límites superiores de especificación (USL) para el TC, concepto derivado de la teoría de la capacidad de Seis Sigma, no sólo para cada producto, sino también para cada categoría de estratificación dentro de cada producto, y supervisar la estabilidad del proceso con gráficos de control de Seis Sigma.
+
+\section{Diagramas de proceso BPMN}
+
+Dentro de la industria, la asistencia sanitaria es uno de los sectores de más rápido crecimiento, impulsado por la puesta en marcha de procesos complejos y dinámicos que persiguen resultados óptimos para los pacientes y buscan siempre una mayor eficacia y eficiencia.
+Para hacer frente a la creciente demanda de asistencia y a la innovación tecnológica, los proveedores de asistencia recurren cada vez más a iniciativas de gestión de procesos empresariales (BPM) para analizar y (re)diseñar sistemáticamente sus procesos y agilizar la prestación de asistencia, reducir costes y aumentar la calidad.
+
+En concreto, el modelado de procesos está cada vez más integrado en las rutinas de gestión sanitaria gracias a su potencial para permitir un entendimiento común entre las diferentes partes interesadas, fomentar la transformación digital y mejorar la prestación de asistencia.
+El uso de modelos de procesos en la asistencia sanitaria aporta múltiples ventajas.
+En primer lugar, las representaciones gráficas de los procesos sirven como referencia intuitiva y más inmediata para la formación y la comunicación con los profesionales sanitarios, ya que son más fáciles de comprender y menos ambiguas que los documentos textuales.
+En segundo lugar, favorecen la estandarización de los procedimientos clínicos y la toma de decisiones, fomentando así el cumplimiento de protocolos compartidos y minimizando la variabilidad.
+Por último, los modelos de procesos permiten realizar distintos tipos de análisis de los mismos y sirven de modelo para la automatización de las actividades clínicas y organizativas y de los flujos de información.
+
+El principal estándar para el modelado de procesos es el Business Process Model and Notation (BPMN), supervisado por el Object Management Group (OMG), que presenta una notación gráfica destinada a ser ``fácilmente comprensible por todos los usuarios empresariales''. BPMN permite definir diagramas de procesos con distintos niveles de abstracción, que pueden utilizarse con fines de documentación y para apoyar los esfuerzos de implantación. Además, BPMN está soportado por una amplia gama de herramientas de modelado y se beneficia de la disponibilidad de oportunidades de formación profesional y académica. Además, BPMN puede complementarse con otros estándares OMG, como el Decision Model and Notation (DMN), que puede utilizarse para capturar aspectos de información y toma de decisiones típicos de los ámbitos sanitarios.
+
+Sin embargo, a pesar de la riqueza expresiva del estándar, los enfoques de modelado basados en BPMN han tenido una acogida modesta en el ámbito sanitario, y la adopción de enfoques BPM sigue estando rezagada en comparación con otros sectores. Esta tendencia puede explicarse en parte por la complejidad inherente de los procesos sanitarios, los entornos hospitalarios altamente regulados y la adopción relativamente lenta de las tecnologías de la información, que contribuyen a aumentar la complejidad del modelado. Una posible dirección para mejorar la adopción de BPMN en contextos sanitarios es proponer extensiones específicas de dominio. Sin embargo, estas extensiones deben enfrentarse a la falta de una evaluación exhaustiva y a la escasa o nula compatibilidad con las herramientas de modelado.
+
+Se define un proceso sanitario como ''un conjunto de actividades médicas y organizativas que se realizan de forma coordinada para proporcionar atención médica a uno o más pacientes''. Los procesos sanitarios tienen algunas características específicas que plantean retos de modelado únicos. Entre otros, nos centramos en los siguientes aspectos específicos:
+
+\begin{itemize}
+    \item \textbf{Centrado en el paciente} La entidad clave sobre la que se ejecutan las actividades no suele ser un documento o un artículo. Es un paciente, un ser humano. Necesita participar activamente en la toma de decisiones médicas y en las actividades terapéuticas, y puede requerir una atención individualizada.
+    \item \textbf{Tiempo crítico} Los procesos de diagnóstico y tratamiento deben programarse en función de las condiciones del paciente, la disponibilidad de recursos y la normativa hospitalaria, y deben respetar varias limitaciones temporales.
+    \item \textbf{Intensivo en la toma de decisiones} La toma de decisiones se basa en el conocimiento médico y requiere que los profesionales sanitarios tengan en cuenta las pruebas clínicas y la información disponible sobre el paciente. Dicha información se almacena no sólo en sistemas informáticos, sino también en documentos en papel y dispositivos médicos, lo que complica la comprensión y automatización de las tareas de intercambio y transformación de la información.
+    \item \textbf{Multidisciplinariedad} Para proporcionar el mejor tratamiento posible a un paciente, es necesario integrar y coordinar distintas disciplinas médicas y unidades organizativas.
+    \item \textbf{Uso intensivo de recursos} Los especialistas médicos, los equipos y las salas suelen ser recursos escasos y caros, compartidos entre distintos departamentos, por lo que deben gestionarse y optimizarse adecuadamente.
+\end{itemize}
+
+\subsection{Estándar BPMN}
+
+El Business Process Model and Notation (BPMN) se encuentra entre los lenguajes de modelado de procesos y decisiones más extendidos. Su objetivo es proporcionar a los usuarios empresariales modelos de gran comprensión, que también puedan utilizarse para su aplicación. En función del objetivo del modelado, los modelos de procesos presentan diferentes niveles de abstracción con respecto al proceso empresarial subyacente. En un nivel organizativo, se da la descripción textual de alto nivel de un proceso, incluyendo las entradas, salidas y responsabilidades del proceso. Un modelo de proceso operativo captura las actividades, su relación, así como la información organizativa. El nivel operativo está subdividido por BPMN, en modelos descriptivos, para una documentación de alto nivel, y modelos analíticos, para analizar el proceso en detalle. A partir de ahí, un modelo de proceso implementado lo amplía y adapta con los aspectos técnicos necesarios para la implementación.
+
+Esta sección pretende presentar rápidamente el estándar BPMN con un ejemplo clínico.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{img/bpmn.png}
+    \caption{Proceso simplificado de atención de urgencias en forma de diagrama de procesos BPMN}
+    \label{fig:bpmn}
+\end{figure}
+
+La Fig. 1 muestra una versión simplificada de un proceso de atención de urgencias, que se desencadena por un empeoramiento de las condiciones del paciente. Como primera tarea, el médico evalúa las condiciones del paciente.
+
+A continuación, mientras realiza la exploración física, una enfermera extrae sangre al paciente. Las muestras de sangre se envían al laboratorio clínico para su análisis y, una vez listos, los resultados se envían de vuelta al servicio de urgencias. Con las notas de la exploración y los resultados del análisis de sangre, el médico tiene que hacer un diagnóstico. En función de los resultados, el médico realiza inmediatamente una intervención quirúrgica o la enfermera la planifica para los días siguientes, teniendo en cuenta que el paciente también puede negarse a someterse a una intervención quirúrgica. En todos los casos, el paciente es dado de alta y se le entregan los documentos de alta. Los diagramas BPMN pueden representar el flujo de control, el flujo de datos y los aspectos organizativos de un proceso con los siguientes conceptos.
+
+\begin{itemize}
+    \item Los diagramas de proceso BPMN pueden representar el flujo de control de un proceso con actividades (por ejemplo, Realizar examen físico), eventos relevantes (por ejemplo, Recibir resultados) y flujos de secuencia que los conectan. Las puertas de enlace, representadas como rombos, se utilizan para controlar los flujos de secuencia y definir comportamientos paralelos y alternativos.
+    \item Las actividades pueden ser atómicas (tareas) o compuestas (subprocesos). Las tareas (por ejemplo, Realizar un examen físico) representan unidades atómicas de trabajo, mientras que los subprocesos representan actividades compuestas, que pueden colapsarse para ocultar detalles (por ejemplo, Intervención quirúrgica). BPMN presenta distintos tipos de tareas con comportamientos inherentes diferentes. Por ejemplo, las tareas de reglas de negocio se utilizan para representar tareas de toma de decisiones (p. ej., tarea Realizar diagnóstico).
+    \item Los eventos externos relevantes se muestran como eventos BPMN (por ejemplo, Empeoramiento de las condiciones del paciente), que capturan los desencadenantes del proceso a los que reacciona el proceso, como mensajes, señales, condiciones (por ejemplo, Empeoramiento de las condiciones del paciente, excepciones (por ejemplo, Paciente rechazó la cirugía) y salidas producidas por el proceso (por ejemplo, Análisis de sangre solicitado).
+    \item Los datos y documentos relevantes utilizados o producidos por las actividades del proceso pueden representarse con la ayuda de objetos de datos (por ejemplo, Notas médicas) o almacenes de datos cuando los datos considerados son persistentes. Se pueden adjuntar anotaciones de texto a los elementos del flujo de control para mejorar su descripción, como la anotación ''Prefer laparoscopic [...]'' asociada al subproceso Intervención quirúrgica.
+    \item Las interacciones entre organizaciones pueden mostrarse mediante el concepto de pools (cada uno de ellos propietario de un proceso) (por ejemplo, el servicio de Urgencias y el laboratorio clínico) y un flujo de mensajes entre ellos.
+    \item Los carriles de las agrupaciones (por ejemplo, la Enfermera y el Médico) pueden utilizarse para representar diferentes roles o sistemas que ejecutan las actividades incluidas.
+\end{itemize}
+
+\subsection{Análisis de la causa raíz. Cinco porqués}
+
+Para cada efecto hay una causa.
+Pero la cadena de resultados entre ambas es bastante larga y se va afinando a medida que se pasa de los insumos a las actividades, los productos, los resultados y el impacto.
+En la gestión basada en resultados, el grado de control del que se disfruta disminuye a medida que se asciende en la cadena y, en consecuencia, aumenta el reto de supervisar y evaluar.

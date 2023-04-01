@@ -59,7 +59,7 @@ La dirección debe crear un entorno y una cultura en los que todos los empleados
 \section{La gestión lean en el sector sanitario}
 
 Lean parte del rechazo al despilfarro. Atribuido a Taiichi Ohno, el sistema Lean se desarrolló en los años 50 y 60 para ofrecer la mejor calidad, el menor coste y el menor plazo de entrega mediante la eliminación de los residuos.
-El término japonés para lo que las empresas estadounidenses suelen clasificar como despilfarro es \textit{muda} y fue definido por Fujio Cho de Toyota como "cualquier cosa que no sea la cantidad mínima de equipo, espacio y tiempo del trabajador, que son absolutamente esenciales para añadir valor al producto".
+El término japonés para lo que las empresas estadounidenses suelen clasificar como despilfarro es \textit{muda} y fue definido por Fujio Cho de Toyota como "cualquier cosa que no sea la cantidad mínima de equipo, espacio y tiempo del trabajador, que son absolutamente esenciales para añadir valor al producto" \cite{helmold_lean_2020}.
 
 La presencia de este tipo de residuos en un sistema repercute negativamente en el plazo de entrega, el coste y la calidad.
 A principios de los años 80, empresas de otros sectores, como el sanitario, comprendieron que la introducción de los principios lean conllevaría varias ventajas.
@@ -70,14 +70,33 @@ Las organizaciones sanitarias, en particular, han descubierto que el enfoque pue
 Uno de los principios básicos del lean es la eliminación del despilfarro, que se define como todo aquello que no añade valor al cliente.
 Los profesionales se centran en ocho tipos específicos de residuos.
 Son tan comunes en la sanidad como en la industria.
-Por lo tanto, la gestión ajustada tiene como objetivo eliminar, por ejemplo, los tiempos de espera o el exceso de medicación.
+Por lo tanto, la gestión ajustada tiene como objetivo eliminar, por ejemplo, los tiempos de espera o el exceso de medicación como se muestra en la Tabla~\ref{tab:timwood}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{llp{10cm}}
+        \toprule
+        Letra & Despilfarro     & Definición                                                                         \\
+        \midrule
+        T     & Transport       & Movimiento excesivo de personas, información o materiales                          \\
+        I     & Inventory       & Stock excesivo y retraso en la información o productos                             \\
+        M     & Motion          & Cualquier movimiento que no añada valor al producto o al proceso                   \\
+        W     & Waiting         & Largos periodos de inactividad de personas, información, maquinaria o   materiales \\
+        O     & Overutilization & Producir más o antes de que lo requiera el cliente                                 \\
+        O     & Overmedication  & Utilización de las herramientas, procedimientos o sistemas incorrectos             \\
+        D     & Defects         & Errores frecuentes en los trámites o en la calidad del producto                    \\
+        \bottomrule
+    \end{tabular}
+    \caption{TIMWOOD, el acrónimo que define los siete despilfarros en el sector sanitario}
+    \label{tab:timwood}
+\end{table}
 
 \subsection{Transporte}
 
 El despilfarro del transporte se produce cuando los materiales se trasladan de un lugar a otro de forma ineficaz. En sanidad se produce cuando:
 
 \begin{itemize}
-    \item Los pacientes son trasladados de un departamento a otro o de una habitación a otra.
+    \item Los pacientes son trasladados de un departamento a otro o de una habitación a otra
     \item Los medicamentos se trasladan de la farmacia al lugar donde se necesitan
     \item Los suministros se trasladan del almacén a la planta
 \end{itemize}
@@ -86,7 +105,8 @@ Algunos de estos transportes se consideran residuos "necesarios" que hay que min
 
 \subsection{Inventario}
 
-Los fabricantes han adoptado en gran medida un enfoque de inventario justo a tiempo para reducir los costes relacionados con el almacenamiento, el movimiento, el deterioro y el desperdicio. Las organizaciones sanitarias buscan hacer lo mismo en lo que se refiere a:
+Los fabricantes han adoptado en gran medida un enfoque de inventario justo a tiempo para reducir los costes relacionados con el almacenamiento, el movimiento, el deterioro y el desperdicio.
+Las organizaciones sanitarias buscan hacer lo mismo en lo que se refiere a:
 
 \begin{itemize}
     \item Medicación que esté cerca de la fecha de caducidad
@@ -97,31 +117,37 @@ Los fabricantes han adoptado en gran medida un enfoque de inventario justo a tie
 
 \subsection{Movimiento}
 
-El movimiento se refiere al desplazamiento innecesario de personas dentro de una instalación. Este ocurre cuando:
+El movimiento se refiere al desplazamiento innecesario de personas dentro de una instalación.
+Este ocurre cuando:
 
 \begin{itemize}
     \item La distribución de las oficinas o del hospital no es coherente con el flujo de trabajo.
-    \item Los suministros no se almacenan donde se necesitan.
+    \item Los suministros no se almacenan donde se necesitan
     \item Los equipos no están bien situados
 \end{itemize}
 
-El primer paso para combatir los despilfarros del lean es reconocerlos dentro de su organización. En la mayoría de los casos, el examen de cada uno de estos factores específicos que contribuyen con frecuencia al despilfarro conduce al descubrimiento de múltiples oportunidades de mejora. También podemos esforzarnos por eliminar el despilfarro (incluidos los clics) en los sistemas de software.
+El primer paso para combatir los despilfarros del lean es reconocerlos dentro de su organización.
+En la mayoría de los casos, el examen de cada uno de estos factores específicos que contribuyen con frecuencia al despilfarro conduce al descubrimiento de múltiples oportunidades de mejora.
+También podemos esforzarnos por eliminar el despilfarro (incluidos los clics del ordenador) en los sistemas de software.
 
 \subsection{Esperas}
 
-En la fabricación, la espera se produce cuando las piezas no pueden salir o cuando los miembros del equipo no pueden realizar sus tareas debido a problemas, como la falta de existencias o fallos en los equipos. La espera en la atención sanitaria es un problema tanto para los pacientes como para los proveedores.
+En la fabricación, la espera se produce cuando las piezas no pueden salir o cuando los miembros del equipo no pueden realizar sus tareas debido a problemas, como la falta de existencias o fallos en los equipos.
+La espera en la atención sanitaria es un problema tanto para los pacientes como para los proveedores.
 
 \begin{itemize}
-    \item Patients in waiting rooms (or exam rooms).
-    \item Funcionarios con cargas de trabajo desiguales a la espera de su próxima tarea.
-    \item Pacientes de urgencias y médicos a la espera de los resultados de las pruebas.
+    \item Pacientes en salas de espera (o de examen)
+    \item Funcionarios con cargas de trabajo desiguales a la espera de su próxima tarea
+    \item Pacientes de urgencias y médicos a la espera de los resultados de las pruebas
     \item Pacientes de urgencias en espera de ingreso hospitalario
     \item Pacientes en espera de alta médica
 \end{itemize}
 
 \subsection{Sobreutilización}
 
-En la industria manufacturera, la sobreproducción se traduce en un exceso de "trabajo en curso" o de existencias de "productos acabados" sin vender. En sanidad es más difícil de detectar, pero se produce cuando los proveedores hacen más de lo que necesita el cliente en ese momento. Incluye:
+En la industria manufacturera, la sobreproducción se traduce en un exceso de ``trabajo en curso'' o de existencias de ``productos acabados'' sin vender.
+En sanidad es más difícil de detectar, pero se produce cuando los proveedores hacen más de lo que necesita el cliente en ese momento.
+Incluye:
 
 \begin{itemize}
     \item Pruebas diagnósticas innecesarias
@@ -132,10 +158,11 @@ En la industria manufacturera, la sobreproducción se traduce en un exceso de "t
 
 \subsection{Sobremedicación}
 
-Sobreprocesar significa hacer más trabajo, hacerlo más complejo o más caro de lo necesario. Adopta la forma de:
+Sobreprocesar significa hacer más trabajo, hacerlo más complejo o más caro de lo necesario.
+Adopta la forma de:
 
 \begin{itemize}
-    \item Pedir imágenes diagnósticas complejas (resonancia magnética) cuando bastaría con un método más sencillo (radiografía).
+    \item Pedir imágenes diagnósticas complejas (resonancia magnética) cuando bastaría con un método más sencillo (radiografía)
     \item Trámites innecesarios
     \item Intervención quirúrgica en lugar de una alternativa médica igualmente eficaz
     \item Citas de seguimiento que no mejoran los resultados del paciente
@@ -144,7 +171,8 @@ Sobreprocesar significa hacer más trabajo, hacerlo más complejo o más caro de
 
 \subsection{Defectos}
 
-Mientras que los defectos de fabricación son caros y molestos, en la atención sanitaria pueden ser mortales. pueden ser mortales. Pueden incluir:
+Mientras que los defectos de fabricación son caros y molestos, en la atención sanitaria pueden ser mortales.
+Pueden incluir:
 
 \begin{itemize}
     \item Diagnóstico erróneo
@@ -153,13 +181,15 @@ Mientras que los defectos de fabricación son caros y molestos, en la atención 
     \item Códigos identificativos incorrectos
 \end{itemize}
 
-El despilfarro incluye el tiempo empleado en crear un defecto, reelaborar estos defectos e inspección de estos defectos. Aunque consideremos que la inspección es un despilfarro, no podemos hasta que no tengamos un proceso perfecto sin defectos. Incluso Toyota aún tiene inspecciones finales cada año, pero la consideran un despilfarro que esperan eliminar algún día.
+El despilfarro incluye el tiempo empleado en crear un defecto, reelaborar estos defectos e inspección de estos defectos.
+Aunque consideremos que la inspección es un despilfarro, no podemos hasta que no tengamos un proceso perfecto sin defectos.
+Incluso Toyota aún tiene inspecciones finales cada año, pero la consideran un despilfarro que esperan eliminar algún día.
 
-\section{Diseño de trabajo estandarizado}
+\section{Estandarización de tareas}
 
-En primer lugar, tenemos que corregir una interpretación errónea, muy extendida y originada por los consultores, del trabajo normalizado.
+Existe una interpretación errónea, muy extendida y originada por los consultores, del concepto de trabajo normalizado.
 El objetivo principal del trabajo normalizado no es tener definidos los procedimientos normalizados de trabajo ni disponer de una línea de base para el enfoque PDCA de mejora continua (ciclo Planificar-Hacer-Verificar-Actuar de Deming); esto puede ser un beneficio secundario derivado y bienvenido.
-Sin embargo, el trabajo normalizado es fundamental para implantar el flujo de pieza única (SPF) en las células de trabajo. Podemos definir el trabajo normalizado del siguiente modo
+Sin embargo, el trabajo normalizado es fundamental para implantar el flujo de pieza única (SPF) en las células de trabajo. Podemos definir el trabajo normalizado del siguiente modo:
 
 \begin{quote}
     El trabajo normalizado es la combinación óptima de operarios, máquinas y material para garantizar que una tarea se realiza siempre de la misma manera con el mínimo desperdicio para cumplir sistemáticamente el \textit{tack time}.
@@ -185,7 +215,7 @@ Debido a esta característica, las entidades de actividad "paso" y "tarea" puede
 Por lo tanto, es recomendable, al menos al principio, dejar cierta discrecionalidad al empleado definiendo un límite superior para ejecutar una tarea o incluso definir el PLT máximo aceptable para una rutina definida, límite superior que, por supuesto, puede ser cuestionado por el supervisor.
 En efecto, aunque también, por ejemplo, las entidades de crédito hablan de productos, el contenido de los productos es muy variable y difiere de un pedido a otro.
 Por lo tanto, tiene más sentido hablar del producto en las industrias de servicios como una plantilla paramétrica con una estructura definida pero con un contenido variable.
-Con cada pedido, el contenido tiene que rellenarse en la estructura de la plantilla para luego ser procesado. 
+Con cada pedido, el contenido tiene que rellenarse en la estructura de la plantilla para luego ser procesado.
 Esta es la razón por la que preferimos no hablar de trabajo estandarizado en el entorno de oficina, que implica una estricta observación del tiempo para cada paso (porque se ejecuta en células de alto rendimiento), sino que preferimos hablar de trabajo normalizado, que permite cierta discrecionalidad en la ejecución de la rutina.
 
 Definamos el trabajo normalizado como un "estándar de trabajo contingente" para completar una tarea en un plazo determinado de acuerdo con un PNT definido.
@@ -219,10 +249,10 @@ Aunque pueda parecer extraño aplicar un método de trabajo basado en el tiempo 
 Sin embargo, la aplicabilidad de normas estrictas de tiempo debido a la variabilidad del contenido de los pedidos es difícil, como acabamos de ver.
 Por tanto, es importante especificar límites superiores de especificación (USL) para el TC, concepto derivado de la teoría de la capacidad de Seis Sigma, no sólo para cada producto, sino también para cada categoría de estratificación dentro de cada producto, y supervisar la estabilidad del proceso con gráficos de control de Seis Sigma.
 
-\section{Diagramas de proceso BPMN}
+\section{Diagramas de proceso}
 
 Dentro de la industria, la asistencia sanitaria es uno de los sectores de más rápido crecimiento, impulsado por la puesta en marcha de procesos complejos y dinámicos que persiguen resultados óptimos para los pacientes y buscan siempre una mayor eficacia y eficiencia.
-Para hacer frente a la creciente demanda de asistencia y a la innovación tecnológica, los proveedores de asistencia recurren cada vez más a iniciativas de gestión de procesos empresariales (BPM) para analizar y (re)diseñar sistemáticamente sus procesos y agilizar la prestación de asistencia, reducir costes y aumentar la calidad.
+Para hacer frente a la creciente demanda de asistencia y a la innovación tecnológica, los proveedores de asistencia recurren cada vez más a iniciativas de gestión de procesos empresariales para analizar y rediseñar sistemáticamente sus procesos y agilizar la prestación de asistencia, reducir costes y aumentar la calidad.
 
 En concreto, el modelado de procesos está cada vez más integrado en las rutinas de gestión sanitaria gracias a su potencial para permitir un entendimiento común entre las diferentes partes interesadas, fomentar la transformación digital y mejorar la prestación de asistencia.
 El uso de modelos de procesos en la asistencia sanitaria aporta múltiples ventajas.
@@ -251,9 +281,9 @@ El Business Process Model and Notation (BPMN) se encuentra entre los lenguajes d
 Esta sección pretende presentar rápidamente el estándar BPMN con un ejemplo clínico.
 
 \begin{figure}[H]
-    \centering 
+    \centering
     \includegraphics[width=\textwidth]{img/bpmn.png}
-    \caption{Proceso simplificado de atención de urgencias en forma de diagrama de procesos BPMN}
+    \caption{Proceso simplificado de atención de urgencias en forma de diagrama de procesos BPMN. Fuente : \citetitle{pufahl_bpmn_2022}}
     \label{fig:bpmn}
 \end{figure}
 

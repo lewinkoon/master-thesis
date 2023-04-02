@@ -311,7 +311,7 @@ Este último punto es vital para comprobar la efectividad de la aplicación de l
 
 \section{Diagramas de proceso}
 
-Dentro de la industria, la asistencia sanitaria es uno de los sectores de más rápido crecimiento, impulsado por la puesta en marcha de procesos complejos y dinámicos que persiguen resultados óptimos para los pacientes y buscan siempre una mayor eficacia y eficiencia.
+Dentro de la industria, la asistencia sanitaria es uno de los sectores de más rápido crecimiento, impulsado por la puesta en marcha de procesos complejos y dinámicos que persiguen resultados óptimos para los pacientes y buscan siempre una mayor eficacia y eficiencia \cite{pufahl_bpmn_2022}.
 Para hacer frente a la creciente demanda de asistencia y a la innovación tecnológica, los proveedores de asistencia recurren cada vez más a iniciativas de gestión de procesos empresariales para analizar y rediseñar sistemáticamente sus procesos y agilizar la prestación de asistencia, reducir costes y aumentar la calidad.
 
 En concreto, el modelado de procesos está cada vez más integrado en las rutinas de gestión sanitaria gracias a su potencial para permitir un entendimiento común entre las diferentes partes interesadas, fomentar la transformación digital y mejorar la prestación de asistencia.
@@ -320,45 +320,173 @@ En primer lugar, las representaciones gráficas de los procesos sirven como refe
 En segundo lugar, favorecen la estandarización de los procedimientos clínicos y la toma de decisiones, fomentando así el cumplimiento de protocolos compartidos y minimizando la variabilidad.
 Por último, los modelos de procesos permiten realizar distintos tipos de análisis de los mismos y sirven de modelo para la automatización de las actividades clínicas y organizativas y de los flujos de información.
 
-El principal estándar para el modelado de procesos es el Business Process Model and Notation (BPMN), supervisado por el Object Management Group (OMG), que presenta una notación gráfica destinada a ser ``fácilmente comprensible por todos los usuarios empresariales''. BPMN permite definir diagramas de procesos con distintos niveles de abstracción, que pueden utilizarse con fines de documentación y para apoyar los esfuerzos de implantación. Además, BPMN está soportado por una amplia gama de herramientas de modelado y se beneficia de la disponibilidad de oportunidades de formación profesional y académica. Además, BPMN puede complementarse con otros estándares OMG, como el Decision Model and Notation (DMN), que puede utilizarse para capturar aspectos de información y toma de decisiones típicos de los ámbitos sanitarios.
+El principal estándar para el modelado de procesos es el Business Process Model and Notation (BPMN), supervisado por el Object Management Group (OMG), que presenta una notación gráfica destinada a ser ``fácilmente comprensible por todos los usuarios''.
+BPMN permite definir diagramas de procesos con distintos niveles de abstracción, que pueden utilizarse con fines de documentación y para apoyar los esfuerzos de implantación.
+Además, BPMN está soportado por una amplia gama de herramientas de modelado y se beneficia de la disponibilidad de oportunidades de formación profesional y académica.
 
-Sin embargo, a pesar de la riqueza expresiva del estándar, los enfoques de modelado basados en BPMN han tenido una acogida modesta en el ámbito sanitario, y la adopción de enfoques BPM sigue estando rezagada en comparación con otros sectores. Esta tendencia puede explicarse en parte por la complejidad inherente de los procesos sanitarios, los entornos hospitalarios altamente regulados y la adopción relativamente lenta de las tecnologías de la información, que contribuyen a aumentar la complejidad del modelado. Una posible dirección para mejorar la adopción de BPMN en contextos sanitarios es proponer extensiones específicas de dominio. Sin embargo, estas extensiones deben enfrentarse a la falta de una evaluación exhaustiva y a la escasa o nula compatibilidad con las herramientas de modelado.
+Sin embargo, a pesar de la riqueza expresiva del estándar, los enfoques de modelado basados en BPMN han tenido una acogida modesta en el ámbito sanitario, y la adopción de enfoques BPM sigue estando rezagada en comparación con otros sectores.
+Esta tendencia puede explicarse en parte por la complejidad inherente de los procesos sanitarios, los entornos hospitalarios altamente regulados y la adopción relativamente lenta de las tecnologías de la información, que contribuyen a aumentar la complejidad del modelado.
 
-Se define un proceso sanitario como ''un conjunto de actividades médicas y organizativas que se realizan de forma coordinada para proporcionar atención médica a uno o más pacientes''. Los procesos sanitarios tienen algunas características específicas que plantean retos de modelado únicos. Entre otros, nos centramos en los siguientes aspectos específicos:
+\subsection{Fundamentos de BPMN}
+
+Un diagrama BPMN está formado por un conjunto de elementos gráficos.
+Estos elementos permiten desarrollar fácilmente diagramas sencillos que resultarán familiares a la mayoría de los analistas empresariales.
+Los elementos se eligieron para que se distinguieran entre sí y para utilizar formas que resultaran familiares a la mayoría de los modeladores.
+Por ejemplo, las actividades son rectángulos y las decisiones, rombos.
+
+Cabe destacar que uno de los motivos que impulsaron el desarrollo de BPMN es crear un mecanismo sencillo para crear modelos de procesos de negocio y, al mismo tiempo, poder gestionar la complejidad inherente a los procesos de negocio \cite{white_introduction_2004}.
+El enfoque adoptado para gestionar estos dos requisitos contradictorios fue organizar los aspectos gráficos de la notación en categorías específicas.
+De este modo, se dispone de un pequeño conjunto de categorías de notación para que el lector de un BPMN pueda reconocer fácilmente los tipos básicos de elementos y comprender el diagrama.
+
+Dentro de las categorías básicas de elementos, pueden añadirse variaciones e información adicionales para apoyar los requisitos de complejidad sin cambiar drásticamente el aspecto básico del diagrama.
+Las cuatro categorías básicas de elementos son:
 
 \begin{itemize}
-    \item \textbf{Centrado en el paciente} La entidad clave sobre la que se ejecutan las actividades no suele ser un documento o un artículo. Es un paciente, un ser humano. Necesita participar activamente en la toma de decisiones médicas y en las actividades terapéuticas, y puede requerir una atención individualizada.
-    \item \textbf{Tiempo crítico} Los procesos de diagnóstico y tratamiento deben programarse en función de las condiciones del paciente, la disponibilidad de recursos y la normativa hospitalaria, y deben respetar varias limitaciones temporales.
-    \item \textbf{Intensivo en la toma de decisiones} La toma de decisiones se basa en el conocimiento médico y requiere que los profesionales sanitarios tengan en cuenta las pruebas clínicas y la información disponible sobre el paciente. Dicha información se almacena no sólo en sistemas informáticos, sino también en documentos en papel y dispositivos médicos, lo que complica la comprensión y automatización de las tareas de intercambio y transformación de la información.
-    \item \textbf{Multidisciplinariedad} Para proporcionar el mejor tratamiento posible a un paciente, es necesario integrar y coordinar distintas disciplinas médicas y unidades organizativas.
-    \item \textbf{Uso intensivo de recursos} Los especialistas médicos, los equipos y las salas suelen ser recursos escasos y caros, compartidos entre distintos departamentos, por lo que deben gestionarse y optimizarse adecuadamente.
+    \item Elementos de flujo
+    \item Conectores
+    \item Carriles
+    \item Artefactos
 \end{itemize}
 
-\subsection{Estándar BPMN}
+\subsection{Elementos de flujo}
 
-El Business Process Model and Notation (BPMN) se encuentra entre los lenguajes de modelado de procesos y decisiones más extendidos. Su objetivo es proporcionar a los usuarios empresariales modelos de gran comprensión, que también puedan utilizarse para su aplicación. En función del objetivo del modelado, los modelos de procesos presentan diferentes niveles de abstracción con respecto al proceso empresarial subyacente. En un nivel organizativo, se da la descripción textual de alto nivel de un proceso, incluyendo las entradas, salidas y responsabilidades del proceso. Un modelo de proceso operativo captura las actividades, su relación, así como la información organizativa. El nivel operativo está subdividido por BPMN, en modelos descriptivos, para una documentación de alto nivel, y modelos analíticos, para analizar el proceso en detalle. A partir de ahí, un modelo de proceso implementado lo amplía y adapta con los aspectos técnicos necesarios para la implementación.
+Un BMPN tiene un pequeño conjunto de  elementos centrales, que son los elementos de flujo, para que los modeladores no tengan que aprender y reconocer un gran número de formas diferentes.
+Los tres objetos de flujo son:
 
-Esta sección pretende presentar rápidamente el estándar BPMN con un ejemplo clínico.
+\begin{itemize}
+    \item Eventos
+    \item Actividades
+    \item Pasarelas
+\end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{img/bpmn.png}
-    \caption{Proceso simplificado de atención de urgencias en forma de diagrama de procesos BPMN. Fuente : \citetitle{pufahl_bpmn_2022}}
-    \label{fig:bpmn}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-event.png}
+        \caption{Evento}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-activity.png}
+        \caption{Actividad}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-gateway.png}
+        \caption{Pasarela}
+    \end{subfigure}
+    \caption{Elementos de flujo en diagramas BPMN}
+    \label{fig:bpmn-elements}
 \end{figure}
 
-La Fig. 1 muestra una versión simplificada de un proceso de atención de urgencias, que se desencadena por un empeoramiento de las condiciones del paciente. Como primera tarea, el médico evalúa las condiciones del paciente.
+\subsection{Conectores}
 
-A continuación, mientras realiza la exploración física, una enfermera extrae sangre al paciente. Las muestras de sangre se envían al laboratorio clínico para su análisis y, una vez listos, los resultados se envían de vuelta al servicio de urgencias. Con las notas de la exploración y los resultados del análisis de sangre, el médico tiene que hacer un diagnóstico. En función de los resultados, el médico realiza inmediatamente una intervención quirúrgica o la enfermera la planifica para los días siguientes, teniendo en cuenta que el paciente también puede negarse a someterse a una intervención quirúrgica. En todos los casos, el paciente es dado de alta y se le entregan los documentos de alta. Los diagramas BPMN pueden representar el flujo de control, el flujo de datos y los aspectos organizativos de un proceso con los siguientes conceptos.
+Los elementos de flujo se conectan entre sí en un diagrama para crear la estructura básica de un proceso de negocio.
+Hay tres conectores que proveen esta función.
+Estos conectores son:
 
 \begin{itemize}
-    \item Los diagramas de proceso BPMN pueden representar el flujo de control de un proceso con actividades (por ejemplo, Realizar examen físico), eventos relevantes (por ejemplo, Recibir resultados) y flujos de secuencia que los conectan. Las puertas de enlace, representadas como rombos, se utilizan para controlar los flujos de secuencia y definir comportamientos paralelos y alternativos.
-    \item Las actividades pueden ser atómicas (tareas) o compuestas (subprocesos). Las tareas (por ejemplo, Realizar un examen físico) representan unidades atómicas de trabajo, mientras que los subprocesos representan actividades compuestas, que pueden colapsarse para ocultar detalles (por ejemplo, Intervención quirúrgica). BPMN presenta distintos tipos de tareas con comportamientos inherentes diferentes. Por ejemplo, las tareas de reglas de negocio se utilizan para representar tareas de toma de decisiones (p. ej., tarea Realizar diagnóstico).
-    \item Los eventos externos relevantes se muestran como eventos BPMN (por ejemplo, Empeoramiento de las condiciones del paciente), que capturan los desencadenantes del proceso a los que reacciona el proceso, como mensajes, señales, condiciones (por ejemplo, Empeoramiento de las condiciones del paciente, excepciones (por ejemplo, Paciente rechazó la cirugía) y salidas producidas por el proceso (por ejemplo, Análisis de sangre solicitado).
-    \item Los datos y documentos relevantes utilizados o producidos por las actividades del proceso pueden representarse con la ayuda de objetos de datos (por ejemplo, Notas médicas) o almacenes de datos cuando los datos considerados son persistentes. Se pueden adjuntar anotaciones de texto a los elementos del flujo de control para mejorar su descripción, como la anotación ''Prefer laparoscopic [...]'' asociada al subproceso Intervención quirúrgica.
-    \item Las interacciones entre organizaciones pueden mostrarse mediante el concepto de pools (cada uno de ellos propietario de un proceso) (por ejemplo, el servicio de Urgencias y el laboratorio clínico) y un flujo de mensajes entre ellos.
-    \item Los carriles de las agrupaciones (por ejemplo, la Enfermera y el Médico) pueden utilizarse para representar diferentes roles o sistemas que ejecutan las actividades incluidas.
+    \item Flujos de secuencia
+    \item Flujos de comunicación
+    \item Asociaciones
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-sequence.png}
+        \caption{Evento}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-message.png}
+        \caption{Actividad}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-association.png}
+        \caption{Pasarela}
+    \end{subfigure}
+    \caption{Conectores en diagramas BPMN}
+    \label{fig:bpmn-connectors}
+\end{figure}
+
+\subsection{Carriles}
+
+Muchas metodologías de modelado de procesos utilizan el concepto de carriles como mecanismo para organizar las actividades en categorías visuales separadas con el fin de ilustrar diferentes capacidades funcionales o responsabilidades.
+BPMN soporta los carriles con dos construcciones principales:
+
+\begin{itemize}
+    \item Pools
+    \item Carriles
+\end{itemize}
+
+Los \textit{pools} se utilizan cuando el diagrama involucra dos entidades de negocio o participantes separados y están físicamente separados en el diagrama.
+Las actividades dentro de pools separados se consideran procesos independientes. Por lo tanto, la secuencia no puede cruzar el límite de un pool.
+Un flujo de mensaje se define como el mecanismo para mostrar la comunicación entre dos participantes, y, por lo tanto, debe conectarse entre dos pools.
+
+Los \textit{carriles} están más estrechamente relacionados con las metodologías tradicionales de modelización de procesos por carriles de nado.
+Los carriles se utilizan a menudo para separar las actividades asociadas a una función o rol específico de la empresa.
+Una secuencia puede cruzar los límites de los carriles dentro de un pool, pero el flujo de mensajes no puede utilizarse entre los elementos de flujo de los carriles de un mismo grupo.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-pool.png}
+        \caption{Pool}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-lane.png}
+        \caption{Carril}
+    \end{subfigure}
+    \caption{Carriles en diagramas BPMN}
+    \label{fig:bpmn-pools}
+\end{figure}
+
+\subsection{Artefactos}
+
+BPMN se diseñó para permitir a los modeladores y a las herramientas de modelado cierta flexibilidad a la hora de ampliar la notación básica y ofrecer la posibilidad de añadir el contexto adecuado a una situación de modelado específica.
+Se puede añadir cualquier número de artefactos a un diagrama, según convenga para el contexto de los procesos de negocio que se están modelando.
+La versión actual de la especificación BPMN predefine sólo tres tipos de artefactos, que son:
+
+\begin{itemize}
+    \item Documentos
+    \item Agrupaciones
+    \item Anotaciones
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-data.png}
+        \caption{Documento}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-group.png}
+        \caption{Agrupación}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/bpmn-note.png}
+        \caption{Anotación}
+    \end{subfigure}
+    \caption{Artefactos en diagramas BPMN}
+    \label{fig:bpmn-artifacts}
+\end{figure}
+
 
 \section{Análisis de la causa raíz. Cinco porqués}
 
@@ -380,7 +508,7 @@ Por lo tanto, hay tres elementos clave para el uso eficaz de la técnica de los 
     \item La determinación de llegar al fondo de los problemas y resolverlos
 \end{itemize}
 
-La técnica fue desarrollada por Sakichi Toyoda para Toyota Industries Corporation.
+La técnica fue desarrollada por Sakichi Toyoda para \textit{Toyota Industries Corporation}.
 
 \subsection{Proceso}
 
@@ -396,7 +524,7 @@ El ejercicio de los cinco porqués mejora enormemente cuando lo aplica un equipo
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{img/five-whys.png}
+    \includegraphics[width=0.8\textwidth]{img/five-whys.png}
     \caption{Plantilla de ejemplo de los cinco porqués}
     \label{fig:five-whys}
 \end{figure}

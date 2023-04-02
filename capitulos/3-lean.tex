@@ -225,67 +225,89 @@ Son los propios líderes quienes tienen la responsabilidad de asegurar el trabaj
 
 En muchas ocasiones, se justifica la imposibilidad de aplicar la metodología lean debido a la alta variabilidad de los procesos. Sin embargo, se ignora que la aplicación de la metología trata de mitigar esta variabilidad.
 
-% Existe una interpretación errónea, muy extendida y originada por los consultores, del concepto de trabajo normalizado.
-% El objetivo principal del trabajo normalizado no es tener definidos los procedimientos normalizados de trabajo ni disponer de una línea de base para el enfoque PDCA de mejora continua (ciclo Planificar-Hacer-Verificar-Actuar de Deming); esto puede ser un beneficio secundario derivado y bienvenido.
-% Sin embargo, el trabajo normalizado es fundamental para implantar el flujo de pieza única (SPF) en las células de trabajo. Podemos definir el trabajo normalizado del siguiente modo:
+\subsection{Elementos de la estandarización de tareas}
 
-% \begin{quote}
-%     El trabajo normalizado es la combinación óptima de operarios, máquinas y material para garantizar que una tarea se realiza siempre de la misma manera con el mínimo desperdicio para cumplir sistemáticamente el \textit{tack time}.
-%     El trabajo normalizado se compone de los elementos \textit{tack time}, contenido del trabajo (WC), secuencia de trabajo WIP estándar y personal adecuado.
-%     El trabajo normalizado debe ser definido, mantenido y mejorado por los operarios y los supervisores.
-% \end{quote}
+Primeramente, es necesario definir y describir las tareas que se realizan en el lugar de trabajo para, posteriormente, agruparlas y ordenarlas en una secuencia.
 
-% De hecho, en una célula de modelo mixto de SPF programado y tomado de la caja Heijunka, es decir, una célula de trabajo dedicada a múltiples productos similares pero diferentes, es de suma importancia que PLT y ER satisfagan la demanda de reabastecer a tiempo el supermercado controlado por Kanban para evitar que se agoten las existencias.
-% Para ello, el trabajo de los operarios debe ser repetible y reproducible.
-% Herramientas útiles en este contexto son las \textbf{Tablas de Capacidad de Proceso} y las \textbf{Tablas de Combinación de Trabajo Estandarizadas}. No entraremos aquí en el amplio e interesante tema del diseño de células industriales, con los conceptos adicionales de estación de trabajo (WTT) y tiempo de rotación de células (CTT), sino que intentaremos transponer parte de la técnica al contexto de la oficina.
+Igual de importante es la manera en que se realizan las distintas tareas.
+Este punto es crítico ya que correponde a todo el conocimiento necesario para realizar una tarea que posee el trabajador pero que no logra transmitir adecuadamente. Documentar estos detalles es vital para conseguir una buena estandarización del proceso.
+Tambien hay que tener en cuenta el nivel de detalle de la documentación.
+La estandarización debe de servir al trabajador no como elemento de formación sino como referencia de qué tareas realizar y por qué.
 
-% En el contexto industrial, el cronómetro es una herramienta esencial para realizar un trabajo normalizado. Es obligatorio medir el tiempo de ciclo de las tareas, incluso de cada uno de los pasos. No sólo para mejorar la línea de base, sino también para poder planificar y aplicar la célula. Para ello, el contenido del trabajo lo define y ejecuta el mejor operario, cuyo ritmo deben alcanzar todos los demás operarios. Se definen las entidades de actividad lógica como:
+Los punto clave a la hora de definir una tarea estandarizada deben de asegurar la correcta calidad del servicio y el cumplimiento del tiempo de realización.
+En ocasiones, se da la situación de que un empleado encuentra una manera de agilizar sus operaciones y completar las tareas en menor tiempo del estimado.
+Sin embargo, puede que este tipo de atajos sean perjudiciales para el empleado encargado de continuar con el trabajo ``aguas abajo'' aumentando incluso su carga de trabajo. Por esta razón, a la hora de documentar una tarea estandarizada es importante especificar el ``por qué'' de cada elemento.
 
-% \begin{itemize}
-%     \item Paso
-%     \item Tarea
-%     \item Subproceso
-%     \item Proceso principal
-% \end{itemize}
+Especificar la duración estimada de una tarea es importante a la hora de estandarizar un proceso.
+Es posible que exista cierto recelo a la hora de incluir la duración de una tarea ya que puede dar lugar reacciones sancionadoras debido al incumplimiento de los tiempos.
+Sin embargo, conocer los tiempos es vital para detectar oportunidades de mejora en el proceso por lo que es frecuente que se daten como intervalos razonables.
+De esta forma, cuando una tarea sobrepase el rango previsto se identificará la tarea en la que es necesario actuar.
 
-% Debido a la diferencia intrínseca de una transacción en comparación con un producto, en una transacción cada nuevo pedido es diferente, incluso en la misma categoría de productos, lo que se aproxima a un tamaño de lote real 1 para cada transacción.
-% Debido a esta característica, las entidades de actividad "paso" y "tarea" pueden presentar un contenido variable y, por lo tanto, un tiempo de ciclo variable; por ejemplo, la concesión de un crédito bancario puede depender de factores contingentes para los que se necesite más tiempo.
-% Por lo tanto, es recomendable, al menos al principio, dejar cierta discrecionalidad al empleado definiendo un límite superior para ejecutar una tarea o incluso definir el PLT máximo aceptable para una rutina definida, límite superior que, por supuesto, puede ser cuestionado por el supervisor.
-% En efecto, aunque también, por ejemplo, las entidades de crédito hablan de productos, el contenido de los productos es muy variable y difiere de un pedido a otro.
-% Por lo tanto, tiene más sentido hablar del producto en las industrias de servicios como una plantilla paramétrica con una estructura definida pero con un contenido variable.
-% Con cada pedido, el contenido tiene que rellenarse en la estructura de la plantilla para luego ser procesado.
-% Esta es la razón por la que preferimos no hablar de trabajo estandarizado en el entorno de oficina, que implica una estricta observación del tiempo para cada paso (porque se ejecuta en células de alto rendimiento), sino que preferimos hablar de trabajo normalizado, que permite cierta discrecionalidad en la ejecución de la rutina.
+Asimismo, incluir en la definición de una tarea el momento concreto en el que se debe realizar ayuda a garantizar la secuencia del proceso, sobre todo cuando dependen de otros departamentos.
 
-% Definamos el trabajo normalizado como un "estándar de trabajo contingente" para completar una tarea en un plazo determinado de acuerdo con un PNT definido.
-% Es preferible hablar de trabajo normalizado (en un entorno de oficina) en lugar de trabajo estandarizado (industria) debido al contenido de transacción no determinista en comparación con el contenido de trabajo determinista de un producto industrial.
-% Por lo tanto, el enfoque debería cambiar del tiempo de ciclo de una tarea al tiempo de transacción de un subproceso, ya que el contenido no determinista conduce a una "ejecución normalizada" por transacción.
-% Sin embargo, también para la transformación de pedidos basada en transacciones, el cronómetro y las mediciones de tiempo pueden registrarse utilizando un gráfico de observación del tiempo de proceso. Los registros repetitivos ayudan a estratificar los productos en categorías, por ejemplo, sencillos, medianos, complejos, que tardan distinto tiempo en procesarse.
+\subsection{Representación visual}
 
-% Tenga en cuenta que la suma de las tareas corresponde al contenido del trabajo (WC).
-% Si las tareas se ejecutan sin interrupción, es decir, sin tiempo de espera entre ellas, el WC corresponde también a la rutina PLT.
-% Si durante la rutina una tarea necesita la intervención de otro departamento, el tiempo de espera es la consecuencia y puede acumularse un WIP.
-% En ese caso, el PLT de la rutina debe tener en cuenta este tiempo de espera; una alternativa es dividir la rutina en una parte y una parte separadas por el WIP.
-% Esto es recomendable si el tiempo de espera es largo con respecto al WC o si las dos partes funcionan a un ritmo diferente; esto permite cambiar a otra actividad mientras tanto.
+Visualizar la secuencia de tareas es clave a la hora de mantener el estándar ya que lo que está fuera de la vista puede estar fuera de la mente. Como una imagen vale más que mil palabras, en la Tabla~\ref{tab:ejemplo-estandar} se muestra la lista que un empleado del departamento administrativo sanitario podría realizar junto con el los plazos establecidos.
+El formato de la tabla se puede modificar para adecuarse a las peculiaridades del puesto añadiendo nuevas columnas de categorías, solicitante, destino o , incluso, formularios.
+De esta manera, el empleado que desempeñe el puesto sabrá en cada momento qué tareas debe realizar y si la está realizando en el tiempo adecuado.
 
-% Debido a la diferencia intrínseca entre la fabricación y la oficina -recordemos que, debido al contenido paramétrico de una orden transaccional, es difícil prescribir el tiempo de una secuencia de pasos individuales dentro de una tarea en un PNT detallado-, no hay que prescribir la secuencia temporal exacta, sino en qué plazo debe entregarse el resultado.
-% Por supuesto, si los tiempos pueden variar, el PLT del procedimiento, subrutina o proceso, variará, pero no debe variar demasiado, ni entre empleados.
-% Para limitar la discrecionalidad del empleado es posible definir clases dentro de un tipo de producto realizado en la misma rutina, por ejemplo, transacciones simples, transacciones de tiempo medio absorción, y transacciones complejas.
+\begin{table}
+    \centering
+    \begin{tabular}{p{5cm}ll}
+        \toprule
+        Tarea                                                             & Duración                & Frecuencia             \\
+        \midrule
+        Registrar las solicitudes de citas para asegurar que se completan & 5 a 10 minutos por cita & Todo el día            \\
+        Generar informes para controlar la demanda                        & 5 minutos               & Viernes a las 15:00    \\
+        Generar informes mensuales de utilización                         & 10 minutos              & Último viernes del mes \\
+        \bottomrule
+    \end{tabular}
+    \caption{Ejemplo de estandarización de tareas}
+    \label{tab:ejemplo-estandar}
+\end{table}
 
-% Por supuesto, esto conduce a una PLT variable de la misma rutina, pero la variabilidad no se debe a la no repetibilidad o no reproducibilidad de la orden, sino al contenido variable del mismo tipo de órdenes. En efecto, como ya hemos visto en el Cap. 2, debido al hecho de que el rendimiento de un servicio se determina "paramétricamente" a través de la unicidad de cada especificación de orden, no podemos hablar de una "repetibilidad idéntica" (y reproducibilidad) de las órdenes, sin embargo, como mucho podemos hablar de una "repetibilidad formal" (y reproducibilidad) que se refiere a la repetición del proceso pero no al contenido.
+\subsection{Pasos para la estandarización}
 
-% Y precisamente esta falta de "repetibilidad idéntica" y de "reproducibilidad idéntica", en la mayoría de los procesos, nos conducirá hacia una modelización diferente del trabajo de oficina en comparación con el trabajo de fabricación: una más parecida a la forma (funcional y relacional en lugar de procedimental), pero también definida por el objetivo en lugar de por un algoritmo determinista.
-% Por tanto, el PNT tiene más bien el carácter de una lista de comprobación.
+El fin de la estandarizar el trabajo no es aplicarlo a todas las actividades sino solamente a las que mayor valor aportan de cara al cliente. Es un error común que puede llegar a interpretarse negativamente como que el fin es el control total de entorno laboral. Por ello, la pregunta que se debe de hacerse el líder es : ¿en qué beneficia la estandarización de la tarea a la organización?
 
-% Al principio de esta sección decíamos que el trabajo normalizado no es sinónimo de procedimiento operativo normalizado (PNT); de hecho, el PNT puede ser una aportación para definir el trabajo normalizado.
-% Sin embargo, los PNT también son importantes en la oficina para garantizar la reproducibilidad formal de los procesos por parte de los empleados cualificados.
-% Los PNT deben ser fáciles de leer y utilizar listas de comprobación; estos PNT ayudan también a los empleados principiantes a familiarizarse rápidamente con la gestión reproducible de las transacciones.
-% Debido a que las transacciones se realizan a menudo mediante la división del trabajo que implica a diferentes empleados que necesitan reuniones, los PNT sobre cómo dirigir o participar en las reuniones son de suma importancia para que el resultado sea lo más eficaz posible.
-% Aunque este tema es muy importante no entramos más en este debate.
+Las fases por las que se debe pasar a la hora de estandarizar son las siguientes:
 
-% Para aproximar la "repetibilidad formal" a una "repetibilidad idéntica" (así como la reproducibilidad, por supuesto) es necesario definir una estratificación dentro del producto, que corresponde a una mezcla de productos, lo que permite planificar mejor la carga de un equipo, es decir, la célula de oficina, y controlar la eficacia del equipo.
-% Aunque pueda parecer extraño aplicar un método de trabajo basado en el tiempo en el mundo de la oficina, el aumento de la competencia global obliga a la dirección a aplicar métodos de aumento de la productividad probados en la industria también para las transacciones del entorno de oficina, independientemente de si se trata de front office o back office.
-% Sin embargo, la aplicabilidad de normas estrictas de tiempo debido a la variabilidad del contenido de los pedidos es difícil, como acabamos de ver.
-% Por tanto, es importante especificar límites superiores de especificación (USL) para el TC, concepto derivado de la teoría de la capacidad de Seis Sigma, no sólo para cada producto, sino también para cada categoría de estratificación dentro de cada producto, y supervisar la estabilidad del proceso con gráficos de control de Seis Sigma.
+\subsubsection{Identificar las tareas claves del puesto}
+
+El responsable debe identificar todas las actividades que se realizan en el área.
+Para ello será útil aprovechar, si los hubiera, de manuales de acogida o procedimientos antiguos antes de reunirse con los empleados.
+
+\subsubsection{Priorizar las tareas clave por orden de importancia}
+
+El segundo paso consiste en la ordenación de las distintas tareas según su importancia.
+Como se ha mencionado anteriormente, la metodología debe aplicarse únicamente en el conjunto de tareas que aportan valor al cliente final, en un centro sanitario sería el paciente.
+Además del valor, debe tenerse en cuenta el tiempo que consume la tarea al trabajador.
+
+\subsubsection{Reunir a un grupo de personas que establezcan la estandarización}
+
+A la hora de formar el equipo de trabajo, es importante incluir empleados que realicen las tareas descritas de forma regular.
+Generalmente, no se podrá incluir en el grupo a todos los empleados, por lo que se debe de entender que se busca representar los intereses del grupo.
+En los pasos posteriores, será útil que otros empleados o el líder forme parte del grupo de trabajo para aportar nuevas ideas, pero siempre y cuando no se altere el proceso.
+
+\subsubsection{Observar la secuencia actual y detectar las oportunidades de mejora}
+
+En este punto, se debe realizar una observación sobre los miembros que no pertenecen al grupo para detectar las irregularidades.
+Además, esta es una oporunidad para cuestionar el funcionamiento del proceso y aprovechar las oportunidades de mejora que se detecten.
+Concretamente, aquellas que no aporten valor al flujo de trabajo o que, incluso, afecten negativamente al proceso.
+Si este paso se realiza correctamente, el mensaje de que la estandarización ayuda y facilita el trabajo de la gente calará entre los miembros, generando mayor compromiso.
+
+\subsubsection{Documentar el consenso de buenas prácticas en el puesto}
+
+Llegar a un acuerdo puede llegar a ser complicado por lo que en este paso es útil ayudarse de las estimaciones de tiempo previstas para cada tarea.
+De esta forma, si alguno de los empleados realiza alguna tarea con mayor rapidez que otros siempre se puede incorporar a la lista de buenas prácticas.
+
+\subsubsection{Ofrecer formación a los empleados en los nuevos cambios}
+
+Una vez se hayan acordado el estándar y la secuencia correcta de las tareas se deberá de formar y explicar a los empleados en el nuevo procedimiento.
+
+\subsubsection{Controlar el cumplimiento de las tareas y sus problemas}
+
+Este último punto es vital para comprobar la efectividad de la aplicación de la estandarización. Para ello, el responsable debe observar el funcionamiento de la unidad y detectar los problemas que surjan a consecuencia de los cambios aplicados. De esta forma, se puede determinar si la estandarización a cumplido su objetivo principal, la mejora del proceso.
 
 \section{Diagramas de proceso}
 
@@ -318,7 +340,7 @@ El Business Process Model and Notation (BPMN) se encuentra entre los lenguajes d
 
 Esta sección pretende presentar rápidamente el estándar BPMN con un ejemplo clínico.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{img/bpmn.png}
     \caption{Proceso simplificado de atención de urgencias en forma de diagrama de procesos BPMN. Fuente : \citetitle{pufahl_bpmn_2022}}

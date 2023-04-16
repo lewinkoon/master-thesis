@@ -1,12 +1,43 @@
-En este capítulo se explica cómo ha sido la dinámica del trabajo a la hora de analizar las tareas administrativas del centro además de desarrollar en detalle todos los procesos que se llevan a cabo en la oficina.
+En este capítulo se explica se desarrollan en detalle todos los procesos que se llevan a cabo en la sección administrativa del centro.
 
 \section{Distribución de la plantilla}
 
-El equipo administrativo del centro de salud está compuesto por siete miembros: dos puestos de interior, cuatro en ventanilla y un jefe de grupo.
+El equipo administrativo del centro de salud está compuesto por siete miembros. En la Figura~\ref{fig:plano-interior} se muestra la posición de cada unos de los puestos.
+
+\begin{itemize}
+    \item Puestos de ventanilla: 1, 2, 3 y 4
+    \item Puestos de interior: 5 y 6
+    \item Jefe de grupo: 7
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/plano-interior.png}
+    \caption{Distribución de la planta baja del centro de salud}
+    \label{fig:plano-interior}
+\end{figure}
 
 \section{Procesos administrativos}
 
 En este apartado se describen los distintos procesos que existen en la sección administrativa.
+Además, se adjunto una tabla donde se especifican el estándar de tareas para cada a proceso y su diagrama BPMN correspondiente.
+
+\begin{table}
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        Tarea                 & Proceso   & Puesto     \\
+        \midrule
+        Identificar paciente  & Consultas & Ventanilla \\
+        Asignar   profesional & Consultas & Ventanilla \\
+        Asignar cita          & Consultas & Ventanilla \\
+        Imprimir   cita       & Consultas & Ventanilla \\
+        Lectura de volante    & Consultas & Ventanilla \\
+        \bottomrule
+    \end{tabular}
+    \caption{Lista de tareas estandarizadas para el proceso de gestión de citas}
+    \label{tab:gestion-citas}
+\end{table}
 
 \subsection{Gestión de citas previas}
 
@@ -15,6 +46,8 @@ Si el usuario decide solicitar cita previa vía online la realización de la tar
 De esta forma, al final de la jornada o cuando el trabajo lo crea oportuno, se revisan las peticiones de citas y se tramitan en el programa Medora.
 Por el contrario, si el usuario acude al centro de salud, la cita se programa en el momento, entregando un justificante en papel.
 Todas las citas se programan a través de \textit{Medora} aunque hay algunas diferencias dependiendo del profesional al que vaya destinado.
+
+En los diagramas expuestos en las Figuras~\ref{fig:proceso-consultas} y \ref{fig:proceso-pruebas} se muestra el flujo administrativo desde que el usuario solicita una cita hasta que la recibe.
 
 \subsubsection{Citas médicas}
 

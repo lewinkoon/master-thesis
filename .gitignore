@@ -296,3 +296,4 @@ TSWLatexianTemp*
 *.xwm
 
 .DS_Store
+.$flowcharts.xml.bkp

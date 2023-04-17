@@ -1,4 +1,4 @@
-En este capítulo se explica se desarrollan en detalle todos los procesos que se llevan a cabo en la sección administrativa del centro.
+En este capítulo se desarrollan en detalle todos los procesos que se llevan a cabo en la sección administrativa del centro.
 
 \section{Distribución de la plantilla}
 
@@ -10,17 +10,29 @@ El equipo administrativo del centro de salud está compuesto por siete miembros.
     \item Jefe de grupo: 7
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{img/plano-interior.png}
     \caption{Distribución de la planta baja del centro de salud}
     \label{fig:plano-interior}
 \end{figure}
 
-\section{Procesos administrativos}
+En las Tablas~\ref{tab:tareas-interior}, \ref{tab:tareas-ventanilla} y \ref{tab:tareas-jefe} se muestran las listas de tareas estandarizadas para cada puesto administrativo.
+Se incluye una categorización por tipo de proceso y el programa informático que se utiliza. Además, se especifica el nivel de carga que indica una estimación de la complejidad de la tarea.
 
-En este apartado se describen los distintos procesos que existen en la sección administrativa.
-Además, se adjunto una tabla donde se especifican el estándar de tareas para cada a proceso y su diagrama BPMN correspondiente.
+\begin{table}
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        Tarea                                   & Proceso       & Programa & Carga \\
+        \midrule
+        Envío de papeles   amarillos a gerencia & Permisos      & Aida     & 50\%  \\
+        Contestar   hojas de reclamación        & Reclamaciones & Ninguno  & 20\%  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Lista de tareas estandarizadas para el puesto de jefe de grupo}
+    \label{tab:tareas-jefe}
+\end{table}
 
 \begin{table}
     \centering
@@ -46,23 +58,51 @@ Además, se adjunto una tabla donde se especifican el estándar de tareas para c
         \bottomrule
     \end{tabular}
     \caption{Lista de tareas estandarizadas para el puesto de interior}
-    \label{tab:gestion-citas}
+    \label{tab:tareas-interior}
 \end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        Tarea                                        & Proceso            & Programa & Carga \\
+        \midrule
+        Recepción de ficha de   asistencia sanitaria & Cargos a terceros  & Ninguno  & 10\%  \\
+        Recepción   de modelo H1                     & Cargos a terceros  & Ninguno  & 10\%  \\
+        Citas radiología                             & Gestión de citas   & Hcis     & 10\%  \\
+        Solicitud   de cita previa para laboratorio  & Gestión de citas   & Medora   & 10\%  \\
+        Creación de tarjeta sanitaria                & Gestión de tarjeta & Tarjeta  & 50\%  \\
+        Gestionar   cambio de médico                 & Gestión de tarjeta & Tarjeta  & 10\%  \\
+        Gestionar desplazamiento                     & Gestión de tarjeta & Tarjeta  & 20\%  \\
+        Impresión   de certificado COVID             & Información        & Hada     & 10\%  \\
+        Impresión de partes de baja                  & Información        & Hada     & 10\%  \\
+        Mostrar   manejo de aplicaciones             & Información        & Ninguno  & 10\%  \\
+        Recepción de hojas de reclamaciones          & Reclamaciones      & Ninguno  & 10\%  \\
+        Solicitud   de cita previa                   & Gestión de citas   & Medora   & 10\%  \\
+        Solicitud de cita previa para vacuna         & Gestión de citas   & Hada     & 10\%  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Lista de tareas estandarizadas para el puesto de ventanilla}
+    \label{tab:tareas-ventanilla}
+\end{table}
+
+\section{Procesos administrativos}
+
+En este apartado se describen los distintos procesos que existen en la sección administrativa.
+Para cada proceso existe al menos un diagrama BPMN, incluidos en el anexo de este trabajo, que describe de una manera visual el flujo de información que sucede en cada proceso.
 
 \subsection{Gestión de citas previas}
 
-Un paciente puede solicitar una cita con un profesional sanitario de atención primaria por dos vías: en el propio centro de salud o a través de la aplicación de SACYL Conecta.
+Un paciente puede solicitar una cita con un profesional sanitario de atención primaria por dos vías: en el propio centro de salud o a través de la aplicación de \Gls{sacyl-conecta}.
 Si el usuario decide solicitar cita previa vía online la realización de la tarea es diferida, no tiene por qué realizarse en el momento.
-De esta forma, al final de la jornada o cuando el trabajo lo crea oportuno, se revisan las peticiones de citas y se tramitan en el programa Medora.
-Por el contrario, si el usuario acude al centro de salud, la cita se programa en el momento, entregando un justificante en papel.
-Todas las citas se programan a través de \textit{Medora} aunque hay algunas diferencias dependiendo del profesional al que vaya destinado.
-
-En los diagramas expuestos en las Figuras~\ref{fig:proceso-consultas} y \ref{fig:proceso-pruebas} se muestra el flujo administrativo desde que el usuario solicita una cita hasta que la recibe.
+De esta forma, al final de la jornada o cuando el trabajo lo permita, se revisan las peticiones de citas y se tramitan en el programa \Gls{medora}.
+Por el contrario, si el usuario acude al centro de salud\footnote{Ver diagrama BPMN de gestión de consultas en la Figura~\ref{fig:proceso-consultas}}, la cita se programa en el momento, entregando un justificante en papel.
+Todas las citas se programan a través de \Gls{medora} aunque hay algunas diferencias dependiendo del profesional al que vaya destinado.
 
 \subsubsection{Citas médicas}
 
-Las consultas de medicina familiar se citan en los huecos de demanda.
-Sin embargo, si se trata de un parte de incapacidad temporal\footnote{Situación en la que se encuentran los trabajadores impedidos temporalmente para trabajar debido a enfermedad común o profesional y accidente, sea o no de trabajo, mientras reciban asistencia sanitaria de la Seguridad Social.} o una receta médica se citan en los huecos de consulta administrativa.
+Las consultas de medicina familiar se citan en los huecos\footnote{Se refiere a la franja de tiempo que se reserva para cada tipo de consulta.} de demanda.
+Sin embargo, si se trata de un parte de \gls{incapacidad-temporal} o una receta médica se citan en los huecos de consulta administrativa.
 Por lo general no se cita en otros huecos a excepción de si es un aviso, que se cita en domicilio.
 En este último caso siempre se debe confirmar la dirección del domicilio y el teléfono del paciente.
 
@@ -80,31 +120,32 @@ Para evitar esta situación se debe de verificar la fecha de nacimiento con el d
 Por lo general, las citas de enfermería se citan a demanda.
 También existe la posibilidad de poner un aviso a domicilio asegurándose siempre de confirmar la fecha de la cita, el domicilio del pacientes y su número de teléfono.
 Además, se debe especificar el motivo de la consulta: curas, sondas, extracciones, etc.
-En el caso de que haya que realizar una analítica se debe de fotocopiar el volante.
+En el caso de que haya que realizar una analítica se debe de fotocopiar el \gls{volante}.
 
-Los electrocardiogramas\footnote{Procedimiento simple, indoloro y rápido que registra la actividad eléctrica del corazón.} se citan con el enfermero correspondiente reservando dos huecos de la agenda ya que son pruebas más largas.
+Los \gls{electrocardiograma} se citan con el enfermero correspondiente reservando dos huecos de la agenda ya que son pruebas más largas.
 
-Las consultas de enfermería pediátrica se citan según el calendario del programa del niño sano, en los huecos de programada o demanda según corresponda. Si es necesario conviene hablar con los profesionales.
+Las consultas de enfermería pediátrica se citan según el calendario del programa del niño sano\footnote{Actuaciones preventivas y de promoción de la salud, que se llevan a cabo periódicamente con el fin de controlar que el niño se está desarrollando y creciendo de manera correcta.}, en los huecos de programada o demanda según corresponda. Si es necesario conviene hablar con los profesionales.
 
 \subsubsection{Pediatría}
 
 Las citas pediátricas se citan en los huecos de demanda de la agenda si es una consulta normal.
 
-Las consultas programadas se citan en los huecos correspondientes según el calendario de revisiones del niño sano\footnote{Actuaciones preventivas y de promoción de la salud, que se llevan a cabo periódicamente con el fin de controlar que el niño se está desarrollando y creciendo de manera correcta.}, procurando que aquellas que corresponden a pediatra y a enfermera coincidan en el mismo día.
+Las consultas programadas se citan en los huecos correspondientes según el calendario de revisiones del niño sano, procurando que aquellas que corresponden a pediatra y a enfermera coincidan en el mismo día.
 
 Los huecos RN se deben de asignar a las revisiones de neonatos entre los cinco y siete días de vida.
 
-Las urgencias pediátricas se citan en los huecos de enfermería forzando, si es necesario, la cita. Si la enfermera que corresponde al paciente no se encuentra disponible, se asigna la cita con otra enfermera.
-En el caso de niños desplazados o transeúntes que deban ser citados de urgencia, se les asignará el pediatra que asuma ese día la miniguardia.
+Las urgencias pediátricas se citan en los huecos de enfermería forzando, si es necesario, la cita.
+Si la enfermera que corresponde al paciente no se encuentra disponible, se asigna la cita con otra enfermera.
+En el caso de niños desplazados\footnote{Pacientes que se han cambiado de residencia por un periodo inferior a tres meses} o transeúntes\footnote{Igual que los desplazados pero con una estancia inferior a un mes} que deban ser citados de urgencia, se les asignará el pediatra que asuma ese día la \gls{guardia}.
 
 \subsubsection{Obstetricia}
 
-Existen distintos tipos de consulta. En lo posible, hay que respetar cada tramo aunque si es necesario conviene hablar con la matrona en caso de duda.
+Existen distintos tipos de consulta. En lo posible, hay que respetar cada tramo aunque si es necesario conviene hablar con la \gls{matrona} en caso de duda.
 
 \subsubsection{Odontología}
 
-Las consultas de odontología se citan en la agenda correspondiente de \textit{Medora}.
-El dentista suele pedir ortopantomografías\footnote{Técnica de radiografía panorámica que se sirve de rayos X para ofrecer información detallada acerca de las estructuras dentales y la anatomía oral} mediante volante. Este tipo de prueba radiológica se realiza en el Hospital Río Hortega solicitando previamente cita.
+Las consultas de odontología se citan en la agenda correspondiente de \Gls{medora}.
+El dentista suele pedir \gls{ortopantomografías} mediante \gls{volante}. Este tipo de prueba radiológica se realiza en el Hospital Río Hortega solicitando previamente cita.
 Es importante citar al paciente al día siguiente de la radiografía para que el odontólogo vea los resultados.
 
 \subsubsection{Trabajador social}
@@ -114,19 +155,21 @@ Solo es posible citar en los huecos de demanda.
 
 \subsubsection{Laboratorio}
 
-Las extracciones de sangre se citan en los huecos de agenda con el mismo nombre.
+Las extracciones de sangre\footnote{Ver diagrama BPMN de gestión de pruebas en la Figura~\ref{fig:proceso-pruebas}} se citan en los huecos de agenda con el mismo nombre.
 En caso de que haya sido solicitada por un especialista, se debe de indicar específicamente dado que no necesita pegatina.
 De la misma forma, se debe de anotar los tres últimos dígitos del número de petición en las que son solicitadas por el médico de familia.
 
-Es importante tener en cuenta que los exudados vaginales se realizan por la matrona, no en el laboratorio.
+% Es importante tener en cuenta que los exudados vaginales se realizan por la \gls{matrona}, no en el laboratorio.
 
-Diariamente, se sacarán las pegatinas correspondientes al día siguiente para el laboratorio. Para ello, primero hay que imprimir el listado por orden alfabético de los apellidos desde el programa \textit{Medora}. Una vez obtenidas todas las pegatinas, es necesario comprobar que han salido todas y están correcamente impresas.
+Diariamente, se sacarán las pegatinas correspondientes al día siguiente para el laboratorio.
+Para ello, primero hay que imprimir el listado por orden alfabético de los apellidos desde el programa \Gls{medora}.
+Una vez obtenidas todas las pegatinas, es necesario comprobar que han salido todas y están correcamente impresas.
 
 \subsubsection{Especialidades del Hospital clínico}
 
-Ante un volante de cirugía vascular, pediátrica o torácica, se cita la consulta de la especialidad concreta en \textit{Medora}.
-Se pincha en el primer hueco disponible anotando la fecha de la cita del volante y se guarda en la carpeta ``Hospital Clínico''.
-Diariamente, se imprime la agenda de cada día desde \textit{Medora} y se envía vía fax junto con los volantes.
+Ante un \gls{volante} de cirugía vascular, pediátrica o torácica, se cita la consulta de la especialidad concreta en \Gls{medora}.
+Se pincha en el primer hueco disponible anotando la fecha de la cita del \gls{volante} y se guarda en la carpeta ``Hospital Clínico''.
+Diariamente, se imprime la agenda de cada día desde \Gls{medora} y se envía vía fax junto con los volantes.
 Cuando se reciben las citas, también vía fax, se espera a recibir la nota de citación.
 Esta se envía al paciente haciéndolo constar previamente en la hoja que archiva en el centro.
 
@@ -134,21 +177,21 @@ Esta se envía al paciente haciéndolo constar previamente en la hoja que archiv
 
 Para citar consultas con el programa del Hospital es imprescindible que el paciente presente la tarjeta sanitaria.
 La excepción es cuando el paciente trae una hoja de citación en la que figura el número de historia clínica, el NHC.
-Igualmente, es imprescindible un volante de petición de un facultativo.
+Igualmente, es imprescindible un \gls{volante} de petición de un facultativo.
 
-Es importante comprobar que la tarjeta que entrega el paciente se corresponde con la persona que se indica en el volante.
-Se vuelcan los datos de tarjeta sanitaria y se verifica la dirección del domicilio y el teléfono. De lo contrario, no se puede dar la cita.
+Es importante comprobar que la tarjeta que entrega el paciente se corresponde con la persona que se indica en el \gls{volante}.
+Se vuelcan los datos de la tarjeta sanitaria en el programa y se verifica la dirección del domicilio y el teléfono. De lo contrario, no se puede dar la cita.
 
 La identificación del paciente se puede hacer, si no funciona con la tarjeta, por número de afiliación junto con los apellidos, nombre, fecha de nacimiento, documento de identidad o cualquier otro campo.
 
 Tras la identificación, se pincha en la tarjeta sanitaria para proceder a la comprobación y volcado de todos los datos.
-Si los datos no son correctos, se modifican en el programa de tarjeta sanitaria.
+Si los datos no son correctos, se modifican en el programa de \Gls{tarjeta-sanitaria}.
 
 A continuación, en el puesto de citación, se comprueba nuevamente que la persona que aparece en pantalla es a la que realmente queremos citar.
 De la misma forma, hay que tener especial cuidado a la hora de entregar la hoja de cita del paciente.
 
-Las citas de radiología se solicitan en ventanilla y con el volante.
-Se debe de indicar en el volante el número de historia clínica antes de imprimir la cita.
+Las citas de radiología se solicitan en ventanilla y con el \gls{volante}.
+Se debe de indicar en el \gls{volante} el número de historia clínica antes de imprimir la cita.
 Este proceso se puede realizar también por vía telefónica.
 
 Las radiografías que no se pueden hacer en el centro de salud son las columnas totales y otras más específicas que se realizan en el Centro de Especialidades Arturo Eyries.
@@ -161,11 +204,13 @@ Los pacientes que deseen otro ginecólogo o en otro centro, deberán redactar un
 \subsubsection{Citas preferentes}
 
 Las citas preferentes que paute el profesional médico se tramitan desde el puesto de ventanilla en la consulta virtual habilitada para tal efecto.
-En este caso no se imprime la hoja de cita pero la primera hoja del volante se guardará en el archivador correspondiente ``Preferentes pendientes'' por orden alfabético del puesto interior.
+En este caso no se imprime la hoja de cita pero la primera hoja del \gls{volante} se guardará en el archivador correspondiente ``Preferentes pendientes'' por orden alfabético del puesto interior.
 
-Las ecografías preferentes o de la unidad de mamografías, se envían por fax a Lourdes. Los nódulos tiroideos tendrán la misma consideración.
+Las ecografías preferentes o de la unidad de mamografías, se envían por fax a Lourdes.
+Los \gls{nodulos-tiroideos} tendrán la misma consideración.
 
-Cuando se reciban las citas, se debe hacer constar en la copia enviada, la fecha de recepción de la cita y la tramitación que se hace de ella. Si la cita es muy inmediata y no da tiempo a enviar el correo, se deja en ventanilla.
+Cuando se reciban las citas, se debe hacer constar en la copia enviada, la fecha de recepción de la cita y la tramitación que se hace de ella.
+Si la cita es muy inmediata y no da tiempo a enviar el correo, se deja en ventanilla.
 En este último caso, se llama al paciente por teléfono para comunicarle la cita y se le indica que debe pasar por ventanilla del centro de salud para recoger su citación.
 Posteriormente, el documento se mueve del archivador ``Citas pendientes'' al archivador ``Resueltos''.
 
@@ -173,18 +218,18 @@ Cuando se reciben las citas desde la Gerencia, se comprueban que llegan todas la
 
 \subsubsection{Consultas simtron}
 
-Desde septiembre de 2016, se citan en la consulta de enfermería desde \textit{Medora}.
+Desde septiembre de 2016, se citan en la consulta de enfermería desde \Gls{medora}.
 A excepción de los pacientes procedentes de residencias geriátricas, que se citan en el puesto interior de laboratorio.
-Una vez se reciben los resultados del control de \textit{Sintrom}\footnote{Medición de la determinación del INR (Razón Normalizada Internacional) o lo que es lo mismo, saber cuánto tarda una muestra de sangre en formar un coágulo.}, se envían por fax a las distintas residencias geriátricas.
+Una vez se reciben los resultados del control de \Gls{sintrom}, se envían por fax a las distintas residencias geriátricas.
 
 Del mismo modo, enfermería se encargará de obtener e imprimir los resultados de la prueba en el puesto interior.
 
-En algunas ocasiones, a primera hora de la mañana una de las residencias envía vía fax la nota de Sintrom de alguno de los pacientes.
+En algunas ocasiones, a primera hora de la mañana una de las residencias envía vía fax la nota de \Gls{sintrom} de alguno de los pacientes.
 En este caso, se citará en el mismo día en la consulta de enfermería y se colocará el documento en el casillero correspondiente al enfermero.
 
 \subsection{Tarjeta sanitaria}
 
-En muchas ocasiones, un paciente acude al centro de salud no por necesitar atención sanitaria sino por motivos administrativos: alta en el sistema de salud, actualización de datos personales de la tarjeta o incluso un cambio de médico de familia. Para todos estos casos, existe un programa informático llamado ``Tarjeta Sanitaria'' donde se registran todos estos trámites.
+En muchas ocasiones, un paciente acude al centro de salud no por necesitar atención sanitaria sino por motivos administrativos: alta en el sistema de salud, actualización de datos personales de la tarjeta o incluso un cambio de médico de familia. Para todos estos casos, existe un programa informático llamado \Gls{tarjeta-sanitaria} donde se registran todos estos trámites. El diagrama del proceso se expone en la Figura~\ref{fig:proceso-tarjeta}.
 
 \subsubsection{Paciente nuevo}
 
@@ -196,14 +241,15 @@ Se rellenan todos los campos necesarios y se imprime el documento justificativo 
 
 Para realizar un cambio de domicilio, de número de teléfono, error en los datos de la tarjeta o la inclusión del número del documento de identidad.
 
-Primeramente, se debe confirmar que el paciente existe en la base de datos de tarjeta sanitaria.
+Primeramente, se debe confirmar que el paciente existe en la base de datos de \Gls{tarjeta-sanitaria}.
 Si es así, se confirman o se modifican los datos que correspondan.
 Si se da el caso de que el paciente esté dado de baja en el sistema, se le recupera.
 
 El modo más rápido de identificación de un paciente es través de su documento de identidad o el número de afiliación de asistencia.
 También cabe la posibilidad de que sea un alta nueva o un cambio de domicilio, de Gerencia o incluso la emisión de una tarjeta de desplazado.
 
-Los mayores de catorce años, además de la inclusión del documento de identidad, se les asignará el médico de familia que tenga el titular. Como motivo de modificación se consignará el paso de oficio de pediatra a médico general.
+Los mayores de catorce años, además de la inclusión del documento de identidad, se les asignará el médico de familia que tenga el titular.
+Como motivo de modificación se consignará el paso de oficio de pediatra a médico general.
 Finalmente se imprime el documento y se sella.
 
 \subsubsection{Extravío o deterioro}
@@ -235,27 +281,26 @@ Se procede del mismo modo que los desplazamientos pero especificando en el progr
 
 \subsection{Gestión de personal: Agendas}
 
-En el programa \textit{Medora} se pueden buscar a los trabajadores seleccionando la categoría y especificando el nombre del profesional u otros datos.
+La gestión de agendas recoge todas la tareas relacionadas con la asignación de franjas de tiempo, o huecos, a los distintos profesionales y sus respectivas modificaciones. El diagrama expuesto en la Figura~\ref{fig:proceso-agendas} se muestra visualmente el proceso.
+
+En el programa \Gls{medora} se pueden buscar a los trabajadores seleccionando la categoría y especificando el nombre del profesional u otros datos.
 Es importante pinchar en la pestaña de todos antes de buscar al profesional.
-Se muestran todos los datos e información de la plaza del profesional además del CIAS\footnote{El Código de Identificación Autonómica Sanitaria es el número que identifica a un profesional médico.} o si es sustituto.
+Se muestran todos los datos e información de la plaza del profesional además del Código de Identificación Autonómica Sanitaria\footnote{Número que identifica a un profesional médico.} o si es sustituto.
 También es posible para dar de alta un nuevo usuario cuando no está dado de alta.
 
 Si el profesional ya ha estado previamente en el centro de salud de Laguna de Duero, hay que recuperarle ya que aparecería de color naranja en el programa.
 En la pestaña de ``Modificar'' se pasa a ``Activo'' para poder realizar la sustución u otro tipo de modificación.
 
-Si, por el contrario, el profesinal no ha estado nunca en el centro de salud de Laguna habría que acceder a la pestaña de gestión de sustituciones y ver qué profesional falta y quién le sustituye.
+Si, por el contrario, el profesional no ha estado nunca en el centro de salud de Laguna habría que acceder a la pestaña de gestión de sustituciones y ver qué profesional falta y quién le sustituye.
 Para crear una sustitución o dar de alta, se rellenan los campos de la pestaña de Gestión de Sustituciones especificando el profesional que sustituye junto con el día y la hora.
 
 En caso de que no sea posible realizar la sustitución, se realiza una autorización siguiendo el mismo procedimiento.
 
 Para transferir las citas del profesional ausente se bloquea la agenda de Medora del que falta indicando la fecha y la hora de las citas.
 
-% EL proceso de realización de agendas consiste en la asignación de tareas sanitarias en la distintas franjas de tiempo de la jornada laboral. Las agendas están orientadas para el personal sanitario que pasan consulta o realizan algún tipo de prueba al paciente: médicos, enfermeras, fisioterapeutas, trabajadores sociales, etc.
-
 \subsection{Cargos a terceros}
 
-Por lo general, los pacientes que acuden al centro de salud tienen acceso gratuito a la cartera de servicios de Atención Primaria, sin embargo, hay ciertos casos en los que el Sistema Público de Salud no asume el coste y que por tanto se debe de cobrar al paciente.
-Estos casos pueden ser:
+Por lo general, los pacientes que acuden al centro de salud tienen acceso gratuito a la cartera de servicios de Atención Primaria, sin embargo, hay ciertos casos en los que el Sistema Público de Salud no asume el coste y que por tanto se debe de cobrar al paciente. Los distintos casos se muestran a continuación y en el diagrama de la Figura~\ref{fig:proceso-cargos}.
 
 \subsubsection{Convenios internacionales}
 
@@ -296,28 +341,30 @@ En el caso de que sea un paciente desplazado, se debe presentar la fotocopia de 
 
 \subsubsection{Particulares}
 
-Se completa la ficha de asistencia sanitaria y se firma la nota informativa. Este último documento es muy importante ya que hace constar que el paciente se responsabiliza del importe del cargo.
+Se completa la ficha de asistencia sanitaria y se firma la nota informativa.
+Este último documento es muy importante ya que hace constar que el paciente se responsabiliza del importe del cargo.
 
 \subsection{Reclamaciones}
 
-El proceso de reclamaciones se inicia, generalmente, cuando un usuario se acerca a la ventanilla de admisión solicitando poner una reclamación.
+El proceso de reclamaciones se inicia, generalmente, cuando un usuario se acerca a la ventanilla de admisión solicitando poner una reclamación (ver Figura~\ref{fig:proceso-reclamaciones}).
 El usuario deberá identificarse con su documento de identidad y el personal administrativo cumplimentará la hoja de reclamación a tal efecto.
 Una vez tomados los datos, el administrativo entrega al usuario la correspondiente hoja de reclamaciones para que la rellene con su demanda.
 Una vez entregada la hoja de vuelta por el usuario, se registra de entrada y se entrega la hoja amarilla al paciente mientras que las dos hojas restantes se quedan en administración.
 
-Tras esta primera fase, si el objeto de la reclamación está relacionado con un trámite administrativo es el propio jefe de grupo quien contesta la reclamación. Si no es el caso, es el propio jefe de grupo quien entrega la reclamación al responsable correspondiente.
+Tras esta primera fase, si el objeto de la reclamación está relacionado con un trámite administrativo es el propio jefe de grupo quien contesta la reclamación.
+Si no es el caso, es el propio jefe de grupo quien entrega la reclamación al responsable correspondiente.
 
 Una vez la reclamación ha sido contestada por el responsable, se envía una de las hojas a la Gerencia de Atención Primaria a través de correo físico ya que son ellos quienes se encargan de resolver formalmente la reclamación y hacérsela llegar al usuario a su domicilio.
 
 Cuando la Gerencia de Atención Primaria resuelve una reclamación, además de enviar la resolución al usuario, se envía una copia al centro de salud donde se interpuso la demanda para que tengan constancia de que fue resuelta en tiempo y forma.
 Este último paso es importante ya que hay casos en que los usuarios acuden al centro de salud preguntando por el estado de su reclamación.
 
-\subsection{Absentismo}
+\subsection{Permisos retribuidos}
 
-La gestión de permisos retribuidos de los profesionales del centro de salud también recae en la sección administrativa.
-Cuando un profesional quiere solicitar un permiso retribuido, debe completar el la la petición correspondiente.
+La gestión de permisos retribuidos de los profesionales del centro de salud también recae en la sección administrativa (ver Figura~\ref{fig:proceso-permisos}).
+Cuando un profesional quiere solicitar un permiso retribuido, debe completar la petición correspondiente.
 Tras completar la petición se debe entregar al responsable, en el caso de médico se entre al coordinador del centro, para recibir la aprobación.
-Si los profesionales son facultativos, por lo general, se deja la petición en el casillero habilitado del coordinador para que lo recoja en cuanto pueda.
+Si el profesional es médico, por lo general, se deja la petición en el casillero habilitado del coordinador para que lo recoja en cuanto pueda.
 
 Tras la aprobación del responsable, es el administrativo quien se encarga de ensobrar la petición y enviarla por correo físico a la Gerencia de Atención Primaria para su autorización.
 Siempre se debe de adjuntar el original con las dos firmas, la del responsable y la del solicitante.
@@ -325,9 +372,10 @@ Se espera a recibir de vuelta la petición autorizada por la Gerencia y se reali
 El original se entrega al profesional mientras que la fotocopia se guarda en la carpeta administrativa del mismo profesional, en la parte delantera de la ficha.
 
 En numerosas ocasiones, debido a la lentitud del proceso provocada por el movimiento físico de papeles por correo, se da la situación de que el profesional disfruta del permiso antes, incluso, de recibir la autorización desde la Gerencia.
-Más adelante, se tratará una de las soluciones propuestas para resolver este cuello de botella.
 
 \subsection{Tareas generales}
+
+En este apartado se desarrollan las tareas que no se pueden incluir en ninguno de los procesos anteriores.
 
 \subsubsection{Informar al paciente}
 
@@ -351,7 +399,7 @@ Todos las comunidades tienen un listado de las enfermedades de notificación obl
 
 Para notificar la enfermedad se rellena el modelo C todos los lunes de cada semana.
 Si existen hoja de declaración individual, se hace fotocopia de cada una de ellas.
-Posteriormente, se registra en el programa \textit{Medora} el informe semanal y se imprimen dos copias.
+Posteriormente, se registra en el programa \Gls{medora} el informe semanal y se imprimen dos copias.
 
 % citar orden SAN/2128/2006, de 27 de diciembre
 
@@ -367,12 +415,12 @@ Cuando vengan selladas, se incluyen por orden alfabético de la carpeta fuelle `
 
 Diariamente, se recoge de la consulta de ginecología las estadísticas diarias.
 Se contabilizan las primeras consultas de ginecología y obstetricia, junto con las revisiones de ambas.
-Posteriormente, se registran los datos en el programa \textit{Medora}.
+Posteriormente, se registran los datos en el programa \Gls{medora}.
 
 \subsubsection{Reubicación de pacientes}
 
 Por motivos de cierre o bloqueo de las agendas de los profesionales, puede suceder que haya que reprogramar las citas ya dadas a los pacientes.
-Se trata de llamar al paciente para cambiar la cita previa. Si esto sucede es importante indicar en el programa \textit{Medora} que la cita está reubicada en el campo de observaciones.
+Se trata de llamar al paciente para cambiar la cita previa. Si esto sucede es importante indicar en el programa \Gls{medora} que la cita está reubicada en el campo de observaciones.
 
 Si la cita ha sido programadas por enfermería, son ellos mismos quienes realizan la reubicación.
 

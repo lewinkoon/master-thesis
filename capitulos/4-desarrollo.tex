@@ -269,26 +269,55 @@ Se procede del mismo modo que los desplazamientos pero especificando en el progr
 
 \subsection{Gestión de personal: Agendas}
 
-La gestión de agendas recoge todas la tareas relacionadas con la asignación de franjas de tiempo, o huecos, a los distintos profesionales y sus respectivas modificaciones. El diagrama expuesto en la Figura~\ref{fig:proceso-agendas} muestra visualmente el proceso.
+La gestión de agendas recoge todas la tareas  relacionadas con la asignación de franjas de tiempo, o huecos, a los distintos profesionales y sus respectivas modificaciones. En la Tabla~\ref{tab:proceso-agendas} se muestra un listado de las tareas pertenecientes a este proceso. Además, en el diagrama BPMN expuesto en la Figura~\ref{fig:proceso-agendas} se puede observar el flujo que se sigue a día de hoy.
 
-En el programa \Gls{medora} se pueden buscar a los trabajadores seleccionando la categoría y especificando el nombre del profesional u otros datos.
-Es importante pinchar en la pestaña de todos antes de buscar al profesional.
+\begin{table}[H]
+    \begin{tabular}{@{}llllll@{}}
+        \toprule
+        Código & Tarea                                & Puesto   & Demandante & Programa & Carga \\
+        \midrule
+        AG01   & Alta a nuevos profesionales          & Interior & Personal   & Medora   & Media \\
+        AG02   & Transferir citas entre profesionales & Interior & Personal   & Medora   & Baja  \\
+        AG03   & Realizar sustituciones               & Interior & Personal   & Medora   & Media \\
+        AG04   & Realizar autorizaciones              & Interior & Personal   & Medora   & Media \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas para el proceso de gestión de agendas}
+    \label{tab:proceso-agendas}
+\end{table}
+
+Todas las tareas relacionadas con la agenda comienza con la búsqueda de los trabajadores en el programa \Gls{medora} seleccionando la categoría y especificando el nombre del profesional u otros datos.
+Es importante pinchar en la pestaña de ``todos'' antes de buscar al profesional.
 Se muestran todos los datos e información de la plaza del profesional además del Código de Identificación Autonómica Sanitaria\footnote{Número que identifica a un profesional médico.} o si es sustituto.
-También es posible para dar de alta un nuevo usuario cuando no está dado de alta.
 
+Para dar de alta un trabajador o crear una sustitución primero es necesario comprobar si ya existe en la base de datos.
 Si el profesional ya ha estado previamente en el centro de salud de Laguna de Duero, hay que recuperarle ya que aparecería de color naranja en el programa.
 En la pestaña de ``Modificar'' se pasa a ``Activo'' para poder realizar la sustución u otro tipo de modificación.
-
 Si, por el contrario, el profesional no ha estado nunca en el centro de salud de Laguna habría que acceder a la pestaña de gestión de sustituciones y ver qué profesional falta y quién le sustituye.
-Para crear una sustitución o dar de alta, se rellenan los campos de la pestaña de Gestión de Sustituciones especificando el profesional que sustituye junto con el día y la hora.
 
-En caso de que no sea posible realizar la sustitución, se realiza una autorización siguiendo el mismo procedimiento.
+Para crear una sustitución o dar de alta, se rellenan los campos de la pestaña de Gestión de Sustituciones especificando el profesional que sustituye junto con el día y la hora. En caso de que no sea posible realizar la sustitución, se realiza una autorización siguiendo el mismo procedimiento.
 
 Para transferir las citas del profesional ausente se bloquea la agenda de Medora del que falta indicando la fecha y la hora de las citas.
 
 \subsection{Cargos a terceros}
 
-Por lo general, los pacientes que acuden al centro de salud tienen acceso gratuito a la cartera de servicios de Atención Primaria, sin embargo, hay ciertos casos en los que el Sistema Público de Salud no asume el coste y que por tanto se debe de cobrar al paciente. Los distintos casos se muestran a continuación y en el diagrama de la Figura~\ref{fig:proceso-cargos}.
+Por lo general, los pacientes que acuden al centro de salud tienen acceso gratuito a la cartera de servicios de Atención Primaria, sin embargo, hay ciertos casos en los que el Sistema Público de Salud no asume el coste y que por tanto se debe de cobrar al paciente. Las tareas se listan en la Tabla~\ref{tab:proceso-cargos} y en el diagrama de la Figura~\ref{fig:proceso-cargos}.
+
+\begin{table}[H]
+    \begin{tabular}{lp{5cm}llll}
+        \toprule
+        Código & Tarea                                & Puesto     & Demandante & Programa & Carga \\
+        \midrule
+        CA01   & Identificar al paciente              & Ventanilla & Paciente   & -        & Baja  \\
+        CA02   & Recepcionar fotocopias               & Ventanilla & Paciente   & -        & Baja  \\
+        CA03   & Informar al paciente de los trámites & Ventanilla & Paciente   & -        & Baja  \\
+        CA04   & Solicitar documentos específicos     & Ventanilla & Paciente   & -        & Baja  \\
+        CA05   & Enviar documentación a la Gerencia   & Interior   & Gerencia   & -        & Baja  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas para el proceso de gestión de cargos a terceros}
+    \label{tab:proceso-cargos}
+\end{table}
 
 \subsubsection{Convenios internacionales}
 
@@ -353,6 +382,21 @@ La gestión de permisos retribuidos de los profesionales del centro de salud tam
 Cuando un profesional quiere solicitar un permiso retribuido, debe completar la petición correspondiente.
 Tras completar la petición se debe entregar al responsable, en el caso de médico se entrega al coordinador del centro, para recibir la aprobación.
 Si el profesional es médico, por lo general, se deja la petición en el casillero habilitado del coordinador para que lo recoja en cuanto pueda.
+
+\begin{table}[H]
+    \begin{tabular}{lp{5cm}llll}
+        \toprule
+        Código & Tarea                                              & Puesto   & Demandante & Programa & Carga \\
+        \midrule
+        PE01   & Archivar solicitud en el casillero del responsable & Interior & Paciente   & -        & Baja  \\
+        PE02   & Enviar solicitud a la Gerencia                     & Interior & Gerencia   & -        & Baja  \\
+        PE03   & Guardar copia en el archivo de solicitudes         & Interior & Paciente   & -        & Baja  \\
+        PE04   & Avisar al solicitante                              & Interior & Paciente   & -        & Baja  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas para el proceso de solicitud de permisos retribuidos}
+    \label{tab:proceso-permisos}
+\end{table}
 
 Tras la aprobación del responsable, es el administrativo quien se encarga de ensobrar la petición y enviarla por correo físico a la Gerencia de Atención Primaria para su autorización.
 Siempre se debe de adjuntar el original con las dos firmas, la del responsable y la del solicitante.

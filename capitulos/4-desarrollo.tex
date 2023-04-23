@@ -17,63 +17,6 @@ El equipo administrativo del centro de salud está compuesto por siete miembros.
     \label{fig:plano-interior}
 \end{figure}
 
-En las Tablas~\ref{tab:tareas-interior} y \ref{tab:tareas-ventanilla} se muestran las listas de tareas estandarizadas para cada puesto administrativo.
-Se incluye una categorización por tipo de proceso y el programa informático que se utiliza. Además, se especifica el nivel de carga que indica una estimación de la complejidad de la tarea.
-
-\begin{table}
-    \centering
-    \begin{tabular}{p{8cm}lll}
-        \toprule
-        Tarea                                                & Proceso          & Programa & Carga \\
-        \midrule
-        Atender teléfono rojo                                & General          & Ninguno  & 10\%  \\
-        Atender teléfono urgencias local                     & General          & Ninguno  & 10\%  \\
-        Diseñar carteles                                     & General          & Ninguno  & 10\%  \\
-        Notificación de EDOs                                 & General          & Medora   & 10\%  \\
-        Informes estadísticos                                & General          & Ninguno  & 10\%  \\
-        Petición y remisión de historias clínicas.           & General          & Ninguno  & 10\%  \\
-        Transferir paciente entre facultativos               & General          & Medora   & 10\%  \\
-        Gestionar citas interhospitalarias                   & Gestión de citas & Hcis     & 10\%  \\
-        Reubicar paciente por ausencia de médico             & Gestión de citas & Medora   & 30\%  \\
-        Solicitud de citas previa en lote para   residencias & Gestión de citas & Medora   & 10\%  \\
-        Recepción de solicitudes de permiso                  & Permisos         & Ninguno  & 10\%  \\
-        Recepción de solicitudes de permisos aprobadas       & Permisos         & Ninguno  & 50\%  \\
-        Envío de reclamaciones al servicio correspondiente   & Reclamaciones    & Ninguno  & 10\%  \\
-        Dar de alta trabajadores en Medora                   & General          & Medora   & 10\%  \\
-        Impresión de pegatinas para analíticas               & Gestión de citas & Medora   & 100\% \\
-        Envío de papeles   amarillos a gerencia              & Permisos         & Aida     & 50\%  \\
-        Contestar hojas de reclamación                       & Reclamaciones    & Ninguno  & 20\%  \\
-        \bottomrule
-    \end{tabular}
-    \caption{Lista de tareas estandarizadas para el puesto de interior}
-    \label{tab:tareas-interior}
-\end{table}
-
-\begin{table}
-    \centering
-    \begin{tabular}{llll}
-        \toprule
-        Tarea                                        & Proceso            & Programa & Carga \\
-        \midrule
-        Recepción de ficha de   asistencia sanitaria & Cargos a terceros  & Ninguno  & 10\%  \\
-        Recepción   de modelo H1                     & Cargos a terceros  & Ninguno  & 10\%  \\
-        Citas radiología                             & Gestión de citas   & Hcis     & 10\%  \\
-        Solicitud   de cita previa para laboratorio  & Gestión de citas   & Medora   & 10\%  \\
-        Creación de tarjeta sanitaria                & Gestión de tarjeta & Tarjeta  & 50\%  \\
-        Gestionar   cambio de médico                 & Gestión de tarjeta & Tarjeta  & 10\%  \\
-        Gestionar desplazamiento                     & Gestión de tarjeta & Tarjeta  & 20\%  \\
-        Impresión   de certificado COVID             & Información        & Hada     & 10\%  \\
-        Impresión de partes de baja                  & Información        & Hada     & 10\%  \\
-        Mostrar   manejo de aplicaciones             & Información        & Ninguno  & 10\%  \\
-        Recepción de hojas de reclamaciones          & Reclamaciones      & Ninguno  & 10\%  \\
-        Solicitud   de cita previa                   & Gestión de citas   & Medora   & 10\%  \\
-        Solicitud de cita previa para vacuna         & Gestión de citas   & Hada     & 10\%  \\
-        \bottomrule
-    \end{tabular}
-    \caption{Lista de tareas estandarizadas para el puesto de ventanilla}
-    \label{tab:tareas-ventanilla}
-\end{table}
-
 \section{Procesos administrativos}
 
 En este apartado se describen los distintos procesos que existen en la sección administrativa.
@@ -84,44 +27,47 @@ Para cada proceso existe al menos un diagrama BPMN, incluidos en el anexo de est
 Un paciente puede solicitar una cita con un profesional sanitario de atención primaria por dos vías: en el propio centro de salud o a través de la aplicación de \Gls{sacyl-conecta}.
 Si el usuario decide solicitar cita previa vía online la realización de la tarea es diferida, es decir, no tiene por qué realizarse en el momento.
 De esta forma, al final de la jornada o cuando el trabajo lo permita, se revisan las peticiones de citas y se tramitan en el programa \Gls{medora}.
-Por el contrario, si el usuario acude al centro de salud (ver diagrama de proceso en la Figura~\ref{fig:proceso-consultas}), la cita se programa en el momento, entregando un justificante en papel.
+Por el contrario, si el usuario acude al centro de salud (ver diagrama de proceso en la Figura~\ref{fig:proceso-consultas} y lista de tareas en la Tabla~\ref{proceso-consultas}), la cita se programa en el momento, entregando un justificante en papel.
 Todas las citas se programan a través de \Gls{medora} aunque hay algunas diferencias dependiendo del profesional al que vaya destinado.
 
-\subsubsection{Citas médicas}
+\begin{table}[H]
+    \begin{tabular}{lp{5cm}llll}
+        \toprule
+        Código & Tarea                   & Puesto     & Demandante & Programa & Carga \\
+        \midrule
+        CO01   & Identificar al paciente & Ventanilla & Paciente   & Tarjeta  & Baja  \\
+        CO02   & Dar cita previa         & Ventanilla & Paciente   & Tarjeta  & Media \\
+        CO03   & Imprimir pegatinas      & Ventanilla & Paciente   & Tarjeta  & Alta  \\
+        CO04   & Imprimir citas previas  & Ventanilla & Paciente   & Tarjeta  & Baja  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas para el proceso de gestión de tarjeta sanitaria}
+    \label{tab:proceso-consulta}
+\end{table}
+
+\subsubsection{Citas generales}
 
 Las consultas de medicina familiar se citan en los huecos\footnote{Se refiere a la franja de tiempo que se reserva para cada tipo de consulta.} de demanda.
 Sin embargo, si se trata de un parte de \gls{incapacidad-temporal} o una receta médica se citan en los huecos de consulta administrativa.
 Por lo general no se cita en otros huecos a excepción de si es un aviso, que se cita en domicilio.
 En este último caso siempre se debe confirmar la dirección del domicilio y el teléfono del paciente.
-
 En el caso de que sea un aviso urgente, se llama al médico para que el paciente o el familiar le explique el estado.
 El médico entonces valora si necesita atención urgente o no.
-
 Todas las citas que se programen deben ser identificadas con la clave correspondiente.
 De tal forma que no se imprimirá ninguna cita que no esté identificada: vía telefónica o por internet.
-
 También es importante asegurarse que el paciente identificado es al que realmente se quiere dar una cita ya que puede haber confusión con pacientes de igual nombre y apellidos.
 Para evitar esta situación se debe de verificar la fecha de nacimiento con el documento de identidad.
-
-\subsubsection{Enfermería}
 
 Por lo general, las citas de enfermería se citan a demanda.
 También existe la posibilidad de poner un aviso a domicilio asegurándose siempre de confirmar la fecha de la cita, el domicilio del pacientes y su número de teléfono.
 Además, se debe especificar el motivo de la consulta: curas, sondas, extracciones, etc.
 En el caso de que haya que realizar una analítica se debe de fotocopiar el \gls{volante}.
-
 Los \glspl{electrocardiograma} se citan con el enfermero correspondiente reservando dos huecos de la agenda ya que son pruebas más largas.
 
 Las consultas de enfermería pediátrica se citan según el calendario del programa del niño sano\footnote{Actuaciones preventivas y de promoción de la salud, que se llevan a cabo periódicamente con el fin de controlar que el niño se está desarrollando y creciendo de manera correcta.}, en los huecos de programada o demanda según corresponda. Si es necesario conviene hablar con los profesionales.
-
-\subsubsection{Pediatría}
-
 Las citas pediátricas se citan en los huecos de demanda de la agenda si es una consulta normal.
-
 Las consultas programadas se citan en los huecos correspondientes según el calendario de revisiones del niño sano, procurando que aquellas que corresponden a pediatra y a enfermera coincidan en el mismo día.
-
 Los huecos RN se deben de asignar a las revisiones de neonatos entre los cinco y siete días de vida.
-
 Las urgencias pediátricas se citan en los huecos de enfermería forzando, si es necesario, la cita.
 Si la enfermera que corresponde al paciente no se encuentra disponible, se asigna la cita con otra enfermera.
 En el caso de niños desplazados\footnote{Pacientes que se han cambiado de residencia por un periodo inferior a tres meses} o transeúntes\footnote{Igual que los desplazados pero con una estancia inferior a un mes} que deban ser citados de urgencia, se les asignará el pediatra que asuma ese día la \gls{guardia}.
@@ -217,7 +163,22 @@ En este caso, se citará en el mismo día en la consulta de enfermería y se col
 
 \subsection{Tarjeta sanitaria}
 
-En muchas ocasiones, un paciente acude al centro de salud no por necesitar atención sanitaria sino por motivos administrativos: alta en el sistema de salud, actualización de datos personales de la tarjeta o incluso un cambio de médico de familia. Para todos estos casos, existe un programa informático llamado \Gls{tarjeta-sanitaria} donde se registran todos estos trámites. El diagrama del proceso se expone en la Figura~\ref{fig:proceso-tarjeta}.
+En muchas ocasiones, un paciente acude al centro de salud no por necesitar atención sanitaria sino por motivos administrativos: alta en el sistema de salud, actualización de datos personales de la tarjeta o incluso un cambio de médico de familia. Para todos estos casos, existe un programa informático llamado \Gls{tarjeta-sanitaria} donde se registran todos estos trámites. El diagrama del proceso se expone en la Figura~\ref{fig:proceso-tarjeta} y el listado de tareas en la Tabla~\ref{tab:proceso-tarjeta}.
+
+\begin{table}[H]
+    \begin{tabular}{lp{5cm}llll}
+        \toprule
+        Código & Tarea                                 & Puesto     & Demandante & Programa & Carga \\
+        \midrule
+        TA01   & Crear nueva tarjeta                   & Ventanilla & Paciente   & Tarjeta  & Alta  \\
+        TA02   & Actualizar datos de tarjeta sanitaria & Ventanilla & Paciente   & Tarjeta  & Media \\
+        TA03   & Recuperar tarjeta                     & Ventanilla & Paciente   & Tarjeta  & Media \\
+        TA04   & Crear tarjeta temporal                & Ventanilla & Paciente   & Tarjeta  & Media \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas para el proceso de gestión de tarjeta sanitaria}
+    \label{tab:proceso-tarjeta}
+\end{table}
 
 \subsubsection{Paciente nuevo}
 
@@ -246,7 +207,7 @@ Se identifica al paciente en la primera pantalla del programa.
 A continuación, en la pestaña de tarjetas, se localiza y se indica si es un extravío o un deterioro.
 Se imprime el documento y se sella.
 
-\subsubsection{Desplazados}
+\subsubsection{Desplazados-transeúntes}
 
 Un paciente puede solicitar un desplazamiento con una duración máxima de tres meses que puede ser prorrogado otros tres.
 Posteriormente, habría que darlo de alta en el sistema.
@@ -262,8 +223,6 @@ Finalmente, se imprimr el documento justificativo y se sella.
 Se debe de indicar en este momento la fecha de validez del desplazamiento.
 Igualmente, se debe de comunicar al paciente que para recibir asistencia sanitaria es preciso presentar tanto la tarjeta sanitaria personal como el documento de desplazamiento.
 
-\subsubsection{Transeúntes}
-
 Cuando el periodo de permanencia es muy corto, inferior a un mes.
 Se procede del mismo modo que los desplazamientos pero especificando en el programa que es del tipo ``Transeúnte''.
 
@@ -272,7 +231,7 @@ Se procede del mismo modo que los desplazamientos pero especificando en el progr
 La gestión de agendas recoge todas la tareas  relacionadas con la asignación de franjas de tiempo, o huecos, a los distintos profesionales y sus respectivas modificaciones. En la Tabla~\ref{tab:proceso-agendas} se muestra un listado de las tareas pertenecientes a este proceso. Además, en el diagrama BPMN expuesto en la Figura~\ref{fig:proceso-agendas} se puede observar el flujo que se sigue a día de hoy.
 
 \begin{table}[H]
-    \begin{tabular}{@{}llllll@{}}
+    \begin{tabular}{lp{5cm}llll}
         \toprule
         Código & Tarea                                & Puesto   & Demandante & Programa & Carga \\
         \midrule
@@ -363,10 +322,27 @@ Este último documento es muy importante ya que hace constar que el paciente se 
 
 \subsection{Reclamaciones}
 
-El proceso de reclamaciones se inicia, generalmente, cuando un usuario se acerca a la ventanilla de admisión solicitando poner una reclamación (ver diagrama de proceso en la Figura~\ref{fig:proceso-reclamaciones}).
+El proceso de reclamaciones se inicia, generalmente, cuando un usuario se acerca a la ventanilla de admisión solicitando poner una reclamación.
+En el listado de tareas de la Tabla~\ref{tab:proceso-reclamaciones} y en el diagrama de la Figura~\ref{fig:proceso-reclamaciones} se puede ver el proceso completo.
 El usuario deberá identificarse con su documento de identidad y el personal administrativo cumplimentará la hoja de reclamación a tal efecto.
 Una vez tomados los datos, el administrativo entrega al usuario la correspondiente hoja de reclamaciones para que la rellene con su demanda.
 Una vez entregada la hoja de vuelta por el usuario, se registra de entrada y se entrega la hoja amarilla al paciente mientras que las dos hojas restantes se quedan en administración.
+
+\begin{table}[H]
+    \begin{tabular}{lp{5cm}llll}
+        \toprule
+        Código & Tarea                               & Puesto   & Demandante & Programa & Carga \\
+        \midrule
+        RE01   & Identificar al reclamador           & Interior & Paciente   & -        & Baja  \\
+        RE02   & Entregar formulario de reclamación  & Interior & Paciente   & -        & Baja  \\
+        RE03   & Entregar reclamación al responsable & Interior & Personal   & -        & Media \\
+        RE04   & Enviar reclamación a la Gerencia    & Interior & Gerencia   & -        & Baja  \\
+        RE05   & Archivar reclamación en el archivo  & Interior & Personal   & -        & Baja  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas para el proceso de gestión de reclamaciones}
+    \label{tab:proceso-reclamaciones}
+\end{table}
 
 Tras esta primera fase, si el objeto de la reclamación está relacionado con un trámite administrativo es el propio jefe de grupo quien contesta la reclamación.
 Si no es el caso, es el propio jefe de grupo quien entrega la reclamación al responsable correspondiente.
@@ -378,7 +354,8 @@ Este último paso es importante ya que hay casos en que los usuarios acuden al c
 
 \subsection{Permisos retribuidos}
 
-La gestión de permisos retribuidos de los profesionales del centro de salud también recae en la sección administrativa (ver diagrama de proceso en la Figura~\ref{fig:proceso-permisos}).
+La gestión de permisos retribuidos de los profesionales del centro de salud también recae en la sección administrativa, concretamente las tareas especificadas en la Tabla~\ref{tab:proceso-permisos} y en el diagrama de proceso de la Figura~\ref{fig:proceso-permisos}).
+
 Cuando un profesional quiere solicitar un permiso retribuido, debe completar la petición correspondiente.
 Tras completar la petición se debe entregar al responsable, en el caso de médico se entrega al coordinador del centro, para recibir la aprobación.
 Si el profesional es médico, por lo general, se deja la petición en el casillero habilitado del coordinador para que lo recoja en cuanto pueda.
@@ -403,7 +380,7 @@ Siempre se debe de adjuntar el original con las dos firmas, la del responsable y
 Se espera a recibir de vuelta la petición autorizada por la Gerencia y se realiza una fotocopia.
 El original se entrega al profesional mientras que la fotocopia se guarda en la carpeta administrativa del mismo profesional, en la parte delantera de la ficha.
 
-En numerosas ocasiones, debido a la lentitud del proceso provocada por el movimiento físico de papeles por correo, se da la situación de que el profesional disfruta del permiso antes, incluso, de recibir la autorización desde la Gerencia.
+Cabe destacar en este proceoso que en numerosas ocasiones, debido a la lentitud del proceso provocada por el movimiento físico de papeles por correo, se da la situación de que el profesional disfruta del permiso antes, incluso, de recibir la autorización desde la Gerencia.
 
 \subsection{Tareas generales}
 

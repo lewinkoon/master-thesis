@@ -27,7 +27,7 @@ Para cada proceso existe al menos un diagrama BPMN, incluidos en el anexo de est
 Un paciente puede solicitar una cita con un profesional sanitario de atención primaria por dos vías: en el propio centro de salud o a través de la aplicación de \Gls{sacyl-conecta}.
 Si el usuario decide solicitar cita previa vía online la realización de la tarea es diferida, es decir, no tiene por qué realizarse en el momento.
 De esta forma, al final de la jornada o cuando el trabajo lo permita, se revisan las peticiones de citas y se tramitan en el programa \Gls{medora}.
-Por el contrario, si el usuario acude al centro de salud (ver diagrama de proceso en la Figura~\ref{fig:proceso-consultas} y lista de tareas en la Tabla~\ref{proceso-consultas}), la cita se programa en el momento, entregando un justificante en papel.
+Por el contrario, si el usuario acude al centro de salud (ver diagrama de proceso en la Figura~\ref{fig:proceso-consultas} y lista de tareas en la Tabla~\ref{tab:proceso-consultas}), la cita se programa en el momento, entregando un justificante en papel.
 Todas las citas se programan a través de \Gls{medora} aunque hay algunas diferencias dependiendo del profesional al que vaya destinado.
 
 \begin{table}[H]
@@ -42,64 +42,52 @@ Todas las citas se programan a través de \Gls{medora} aunque hay algunas difere
         \bottomrule
     \end{tabular}
     \caption{Listado de tareas para el proceso de gestión de tarjeta sanitaria}
-    \label{tab:proceso-consulta}
+    \label{tab:proceso-consultas}
 \end{table}
 
 \subsubsection{Citas generales}
 
-Las consultas de medicina familiar se citan en los huecos\footnote{Se refiere a la franja de tiempo que se reserva para cada tipo de consulta.} de demanda.
+Las \textbf{consultas de medicina familiar} se citan en los huecos\footnote{Se refiere a la franja de tiempo que se reserva para cada tipo de consulta.} de demanda.
 Sin embargo, si se trata de un parte de \gls{incapacidad-temporal} o una receta médica se citan en los huecos de consulta administrativa.
 Por lo general no se cita en otros huecos a excepción de si es un aviso, que se cita en domicilio.
 En este último caso siempre se debe confirmar la dirección del domicilio y el teléfono del paciente.
 En el caso de que sea un aviso urgente, se llama al médico para que el paciente o el familiar le explique el estado.
 El médico entonces valora si necesita atención urgente o no.
-Todas las citas que se programen deben ser identificadas con la clave correspondiente.
-De tal forma que no se imprimirá ninguna cita que no esté identificada: vía telefónica o por internet.
 También es importante asegurarse que el paciente identificado es al que realmente se quiere dar una cita ya que puede haber confusión con pacientes de igual nombre y apellidos.
 Para evitar esta situación se debe de verificar la fecha de nacimiento con el documento de identidad.
 
-Por lo general, las citas de enfermería se citan a demanda.
+Por lo general, las \textbf{citas de enfermería} se citan a demanda.
 También existe la posibilidad de poner un aviso a domicilio asegurándose siempre de confirmar la fecha de la cita, el domicilio del pacientes y su número de teléfono.
 Además, se debe especificar el motivo de la consulta: curas, sondas, extracciones, etc.
 En el caso de que haya que realizar una analítica se debe de fotocopiar el \gls{volante}.
 Los \glspl{electrocardiograma} se citan con el enfermero correspondiente reservando dos huecos de la agenda ya que son pruebas más largas.
-
 Las consultas de enfermería pediátrica se citan según el calendario del programa del niño sano\footnote{Actuaciones preventivas y de promoción de la salud, que se llevan a cabo periódicamente con el fin de controlar que el niño se está desarrollando y creciendo de manera correcta.}, en los huecos de programada o demanda según corresponda. Si es necesario conviene hablar con los profesionales.
-Las citas pediátricas se citan en los huecos de demanda de la agenda si es una consulta normal.
+
+Las \textbf{citas pediátricas} se citan en los huecos de demanda de la agenda si es una consulta normal.
 Las consultas programadas se citan en los huecos correspondientes según el calendario de revisiones del niño sano, procurando que aquellas que corresponden a pediatra y a enfermera coincidan en el mismo día.
 Los huecos RN se deben de asignar a las revisiones de neonatos entre los cinco y siete días de vida.
 Las urgencias pediátricas se citan en los huecos de enfermería forzando, si es necesario, la cita.
 Si la enfermera que corresponde al paciente no se encuentra disponible, se asigna la cita con otra enfermera.
 En el caso de niños desplazados\footnote{Pacientes que se han cambiado de residencia por un periodo inferior a tres meses} o transeúntes\footnote{Igual que los desplazados pero con una estancia inferior a un mes} que deban ser citados de urgencia, se les asignará el pediatra que asuma ese día la \gls{guardia}.
 
-\subsubsection{Obstetricia}
+Existen distintos tipos de \textbf{consulta de obstetrcia}.
+En lo posible, hay que respetar cada tramo aunque, si es necesario, conviene hablar con la \gls{matrona} en caso de duda.
 
-Existen distintos tipos de consulta. En lo posible, hay que respetar cada tramo aunque, si es necesario, conviene hablar con la \gls{matrona} en caso de duda.
-
-\subsubsection{Odontología}
-
-Las consultas de odontología se citan en la agenda correspondiente de \Gls{medora}.
-El dentista suele pedir \gls{ortopantomografías} mediante \gls{volante}. Este tipo de prueba radiológica se realiza en el Hospital Río Hortega solicitando previamente cita.
-Es importante citar al paciente al día siguiente de la radiografía para que el odontólogo vea los resultados.
-
-\subsubsection{Trabajador social}
-
-Acude tres días a la semana: lunes, martes y miércoles.
+Las \textbf{consultas con el trabajador social} solamente son tres días a la semana: lunes, martes y miércoles.
 Solo es posible citar en los huecos de demanda.
 
-\subsubsection{Laboratorio}
+\subsubsection{Citas de especialidades}
 
-Las extracciones de sangre (ver diagrama de proceso en la Figura~\ref{fig:proceso-pruebas}) se citan en los huecos de agenda con el mismo nombre.
-En caso de que haya sido solicitada por un especialista, se debe de indicar específicamente dado que no necesita pegatina.
-De la misma forma, se debe de anotar los tres últimos dígitos del número de petición en las que son solicitadas por el médico de familia.
-
-% Es importante tener en cuenta que los exudados vaginales se realizan por la \gls{matrona}, no en el laboratorio.
-
-Diariamente, se sacarán las pegatinas correspondientes al día siguiente para el laboratorio.
-Para ello, primero hay que imprimir el listado por orden alfabético de los apellidos desde el programa \Gls{medora}.
-Una vez obtenidas todas las pegatinas, es necesario comprobar que han salido todas y están correctamente impresas.
-
-\subsubsection{Especialidades del Hospital clínico}
+Para citar consultas de especialidades es imprescindible que el paciente presente la tarjeta sanitaria.
+La excepción es cuando el paciente trae una hoja de citación en la que figura el número de historia clínica, el NHC.
+Igualmente, es imprescindible un \gls{volante} de petición de un facultativo.
+Es importante comprobar que la tarjeta que entrega el paciente se corresponde con la persona que se indica en el \gls{volante}.
+Se vuelcan los datos de la tarjeta sanitaria en el programa y se verifica la dirección del domicilio y el teléfono. De lo contrario, no se puede dar la cita.
+La identificación del paciente se puede hacer, si no funciona con la tarjeta, por número de afiliación junto con los apellidos, nombre, fecha de nacimiento, documento de identidad o cualquier otro campo.
+Tras la identificación, se pincha en la tarjeta sanitaria para proceder a la comprobación y volcado de todos los datos.
+Si los datos no son correctos, se modifican en el programa de \Gls{tarjeta-sanitaria}.
+A continuación, en el puesto de citación, se comprueba nuevamente que la persona que aparece en pantalla es a la que realmente queremos citar.
+De la misma forma, hay que tener especial cuidado a la hora de entregar la hoja de cita del paciente.
 
 Ante un \gls{volante} de cirugía vascular, pediátrica o torácica, se cita la consulta de la especialidad concreta en \Gls{medora}.
 Se pincha en el primer hueco disponible anotando la fecha de la cita del \gls{volante} y se guarda en la carpeta ``Hospital Clínico''.
@@ -107,59 +95,55 @@ Diariamente, se imprime la agenda de cada día desde \Gls{medora} y se envía v�
 Cuando se reciben las citas, también vía fax, se espera a recibir la nota de citación.
 Esta se envía al paciente haciéndolo constar previamente en la hoja que archiva en el centro.
 
-\subsubsection{Especialidades del Hospital Río Hortega}
-
-Para citar consultas con el programa del Hospital es imprescindible que el paciente presente la tarjeta sanitaria.
-La excepción es cuando el paciente trae una hoja de citación en la que figura el número de historia clínica, el NHC.
-Igualmente, es imprescindible un \gls{volante} de petición de un facultativo.
-
-Es importante comprobar que la tarjeta que entrega el paciente se corresponde con la persona que se indica en el \gls{volante}.
-Se vuelcan los datos de la tarjeta sanitaria en el programa y se verifica la dirección del domicilio y el teléfono. De lo contrario, no se puede dar la cita.
-
-La identificación del paciente se puede hacer, si no funciona con la tarjeta, por número de afiliación junto con los apellidos, nombre, fecha de nacimiento, documento de identidad o cualquier otro campo.
-
-Tras la identificación, se pincha en la tarjeta sanitaria para proceder a la comprobación y volcado de todos los datos.
-Si los datos no son correctos, se modifican en el programa de \Gls{tarjeta-sanitaria}.
-
-A continuación, en el puesto de citación, se comprueba nuevamente que la persona que aparece en pantalla es a la que realmente queremos citar.
-De la misma forma, hay que tener especial cuidado a la hora de entregar la hoja de cita del paciente.
-
-Las citas de radiología se solicitan en ventanilla y con el \gls{volante}.
+Las \textbf{citas de radiología} se solicitan en ventanilla y con el \gls{volante}.
 Se debe de indicar en el \gls{volante} el número de historia clínica antes de imprimir la cita.
 Este proceso se puede realizar también por vía telefónica.
-
 Las radiografías que no se pueden hacer en el centro de salud son las columnas totales y otras más específicas que se realizan en el Centro de Especialidades Arturo Eyries.
-
 Las ecografías se citan también en el Hospital.
 
-Por otro lado, las citas de ginecología solo se pueden dar para los ginecólogos del propio centro de salud.
+Por otro lado, las \textbf{citas de ginecología} solo se pueden dar para los ginecólogos del propio centro de salud.
 Los pacientes que deseen otro ginecólogo o en otro centro, deberán redactar un escrito y presentarlo en la sección de Atención al Paciente del Hospital Río Hortega.
 
-\subsubsection{Citas preferentes}
+Las \textbf{consultas de odontología} se citan en la agenda correspondiente de \Gls{medora}.
+El dentista suele pedir \gls{ortopantomografías} mediante \gls{volante}.
+Este tipo de prueba radiológica se realiza en el Hospital Río Hortega solicitando previamente cita.
+Es importante citar al paciente al día siguiente de la radiografía para que el odontólogo vea los resultados.
 
-Las citas preferentes que paute el profesional médico se tramitan desde el puesto de ventanilla en la consulta virtual habilitada para tal efecto.
-En este caso no se imprime la hoja de cita pero la primera hoja del \gls{volante} se guardará en el archivador correspondiente ``Preferentes pendientes'' por orden alfabético del puesto interior.
+\subsubsection{Laboratorio}
 
-Las ecografías preferentes o de la unidad de mamografías, se envían por fax a Lourdes.
-Los \gls{nodulos-tiroideos} tendrán la misma consideración.
+Las extracciones de sangre se citan en los huecos de agenda con el mismo nombre.
+En caso de que haya sido solicitada por un especialista, se debe de indicar específicamente dado que no necesita pegatina.
+De la misma forma, se debe de anotar los tres últimos dígitos del número de petición en las que son solicitadas por el médico de familia.
 
-Cuando se reciban las citas, se debe hacer constar en la copia enviada, la fecha de recepción de la cita y la tramitación que se hace de ella.
-Si la cita es muy inmediata y no da tiempo a enviar el correo, se deja en ventanilla.
-En este último caso, se llama al paciente por teléfono para comunicarle la cita y se le indica que debe pasar por ventanilla del centro de salud para recoger su citación.
-Posteriormente, el documento se mueve del archivador ``Citas pendientes'' al archivador ``Resueltos''.
+Diariamente, se sacarán las pegatinas correspondientes al día siguiente para el laboratorio.
+Para ello, primero hay que imprimir el listado por orden alfabético de los apellidos desde el programa \Gls{medora}.
+Una vez obtenidas todas las pegatinas, es necesario comprobar que han salido todas y están correctamente impresas.
 
-Cuando se reciben las citas desde la Gerencia, se comprueban que llegan todas las que se enviaron. En caso de no haber recibido alguna, se debe reclamar a la misma Gerencia.
+% \subsubsection{Citas preferentes}
 
-\subsubsection{Consultas simtron}
+% Las citas preferentes que paute el profesional médico se tramitan desde el puesto de ventanilla en la consulta virtual habilitada para tal efecto.
+% En este caso no se imprime la hoja de cita pero la primera hoja del \gls{volante} se guardará en el archivador correspondiente ``Preferentes pendientes'' por orden alfabético del puesto interior.
 
-Desde septiembre de 2016, se citan en la consulta de enfermería desde \Gls{medora}.
-A excepción de los pacientes procedentes de residencias geriátricas, que se citan en el puesto interior de laboratorio.
-Una vez se reciben los resultados del control de \Gls{sintrom}, se envían por fax a las distintas residencias geriátricas.
+% Las ecografías preferentes o de la unidad de mamografías, se envían por fax a Lourdes.
+% Los \gls{nodulos-tiroideos} tendrán la misma consideración.
 
-Del mismo modo, enfermería se encargará de obtener e imprimir los resultados de la prueba en el puesto interior.
+% Cuando se reciban las citas, se debe hacer constar en la copia enviada, la fecha de recepción de la cita y la tramitación que se hace de ella.
+% Si la cita es muy inmediata y no da tiempo a enviar el correo, se deja en ventanilla.
+% En este último caso, se llama al paciente por teléfono para comunicarle la cita y se le indica que debe pasar por ventanilla del centro de salud para recoger su citación.
+% Posteriormente, el documento se mueve del archivador ``Citas pendientes'' al archivador ``Resueltos''.
 
-En algunas ocasiones, a primera hora de la mañana una de las residencias envía vía fax la nota de \Gls{sintrom} de alguno de los pacientes.
-En este caso, se citará en el mismo día en la consulta de enfermería y se colocará el documento en el casillero correspondiente al enfermero.
+% Cuando se reciben las citas desde la Gerencia, se comprueban que llegan todas las que se enviaron. En caso de no haber recibido alguna, se debe reclamar a la misma Gerencia.
+
+% \subsubsection{Consultas simtron}
+
+% Desde septiembre de 2016, se citan en la consulta de enfermería desde \Gls{medora}.
+% A excepción de los pacientes procedentes de residencias geriátricas, que se citan en el puesto interior de laboratorio.
+% Una vez se reciben los resultados del control de \Gls{sintrom}, se envían por fax a las distintas residencias geriátricas.
+
+% Del mismo modo, enfermería se encargará de obtener e imprimir los resultados de la prueba en el puesto interior.
+
+% En algunas ocasiones, a primera hora de la mañana una de las residencias envía vía fax la nota de \Gls{sintrom} de alguno de los pacientes.
+% En este caso, se citará en el mismo día en la consulta de enfermería y se colocará el documento en el casillero correspondiente al enfermero.
 
 \subsection{Tarjeta sanitaria}
 
@@ -386,14 +370,32 @@ Cabe destacar en este proceoso que en numerosas ocasiones, debido a la lentitud 
 
 En este apartado se desarrollan las tareas que no se pueden incluir en ninguno de los procesos anteriores.
 
+\begin{table}[H]
+    \begin{tabular}{lp{5cm}llll}
+        \toprule
+        Código & Tarea                                      & Puesto     & Demandante & Programa & Carga \\
+        \midrule
+        GE01   & Diseñar cartelería                         & Interior   & Paciente   & Office   & Media \\
+        GE02   & Notificar EDOs                             & Interior   & Gerencia   & Medora   & Media \\
+        GE03   & Informar sobre estadísticas de ginecología & Interior   & Gerencia   & Office   & Media \\
+        GE04   & Atender teléfono rojo y de urgencias       & Interior   & Personal   & -        & Baja  \\
+        GE05   & Remisión de historias clínicas             & Interior   & Paciente   & -        & Media \\
+        GE06   & Tramitación de recetas con visado          & Interior   & Paciente   & -        & Media \\
+        GE07   & Impresión de partes de baja laboral        & Ventanilla & Paciente   & Hada     & Baja  \\
+        GE08   & Mostrar manejo de Sacyl Conecta a usuarios & Ventanilla & Paciente   & -        & Baja  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Listado de tareas que no pertenecen a ningún proceso específico}
+    \label{tab:proceso-general}
+\end{table}
+
 \subsubsection{Informar al paciente}
 
 Una de las funciones de los puestos administrativos de ventanilla es la de informar a los paciente y entregar justificantes de diversos tipos. Aunque las solicitudes en este proceso son muy diversas, en general se pueden distinguir tres tipos:
 
 \begin{itemize}
-    \item Utilización de la aplicación de SACYL Conecta
+    \item Mostrar manejo de la aplicación de SACYL Conecta.
     \item Impresión del parte de baja laboral
-    \item Impresión de justificante COVID
 \end{itemize}
 
 \subsubsection{Enfermedades de declaración obligatoria}
@@ -424,12 +426,12 @@ Diariamente, se recoge de la consulta de ginecología las estadísticas diarias.
 Se contabilizan las primeras consultas de ginecología y obstetricia, junto con las revisiones de ambas.
 Posteriormente, se registran los datos en el programa \Gls{medora}.
 
-\subsubsection{Reubicación de pacientes}
+% \subsubsection{Reubicación de pacientes}
 
-Por motivos de cierre o bloqueo de las agendas de los profesionales, puede suceder que haya que reprogramar las citas ya dadas a los pacientes.
-Se trata de llamar al paciente para cambiar la cita previa. Si esto sucede es importante indicar en el programa \Gls{medora} que la cita está reubicada en el campo de observaciones.
+% Por motivos de cierre o bloqueo de las agendas de los profesionales, puede suceder que haya que reprogramar las citas ya dadas a los pacientes.
+% Se trata de llamar al paciente para cambiar la cita previa. Si esto sucede es importante indicar en el programa \Gls{medora} que la cita está reubicada en el campo de observaciones.
 
-Si la cita ha sido programada por enfermería, son ellos mismos quienes realizan la reubicación.
+% Si la cita ha sido programada por enfermería, son ellos mismos quienes realizan la reubicación.
 
 \subsubsection{Diseño de cartelería}
 
